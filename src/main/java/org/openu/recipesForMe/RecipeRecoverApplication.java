@@ -1,4 +1,4 @@
-package org.openu.recipeRecover;
+package org.openu.recipesForMe;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

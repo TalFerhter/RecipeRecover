@@ -1,4 +1,4 @@
-package org.openu.recipeRecover.BL;
+package org.openu.recipesForMe.BL;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
