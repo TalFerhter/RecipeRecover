@@ -1,7 +1,8 @@
-package org.openu.recipesForMe.Models;
+package recipesforme.models;
 
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -10,18 +11,23 @@ public class Rating {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private int rating;
+    private int rating_id;
+
+    @OneToMany(mappedBy = "ratings")
+    private List<Recipe> recipes;
+
+    protected Rating() {}
 
     public Rating(int rating) {
-        this.rating = rating;
+        this.rating_id = rating;
     }
 
-    public int getRating() {
-        return rating;
+    public int getRating_id() {
+        return rating_id;
     }
 
-    public void setRating(int rating) {
-        this.rating = rating;
+    public void setRating_id(int rating_id) {
+        this.rating_id = rating_id;
     }
 
     @Override
@@ -36,6 +42,6 @@ public class Rating {
             return false;
         }
         final Rating other = (Rating) obj;
-        return Objects.equals(this.rating, other.rating);
+        return Objects.equals(this.rating_id, other.rating_id);
     }
 }

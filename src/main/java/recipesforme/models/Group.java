@@ -1,7 +1,8 @@
-package org.openu.recipesForMe.Models;
+package recipesforme.models;
 
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -13,6 +14,11 @@ public class Group {
     private int group_id;
 
     private String title;
+
+    @ManyToMany(mappedBy = "groups")
+    private List<Word> words;
+
+    protected Group() {}
 
     public Group(int group_id, String title) {
         this.group_id = group_id;

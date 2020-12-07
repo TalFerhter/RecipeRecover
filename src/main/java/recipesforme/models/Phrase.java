@@ -1,6 +1,7 @@
-package org.openu.recipesForMe.Models;
+package recipesforme.models;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -11,7 +12,15 @@ public class Phrase {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int phrase_id;
 
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "phrases_positions",
+            joinColumns = @JoinColumn(name = "phrase_id", referencedColumnName = "phrase_id"),
+            inverseJoinColumns = @JoinColumn(name = "pos_id", referencedColumnName = "pos_id"))
+    private List<Position> positions;
+
     private String text;
+
+    protected Phrase() {}
 
     public Phrase(int phrase_id, String text) {
         this.phrase_id = phrase_id;

@@ -1,13 +1,12 @@
-package org.openu.recipesForMe.Models;
+package recipesforme.models;
 
 import javax.persistence.*;
 import java.sql.Time;
 import java.util.Objects;
-import java.util.TimeZone;
 
 @Entity
 @Table(name = "recipes")
-public class Recipes {
+public class Recipe {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -15,21 +14,26 @@ public class Recipes {
 
     private String recipe_name;
     private String site_name;
-    private int author_id;
-    private int rating_id;
+
+    @ManyToOne
+    @JoinColumn(name = "author_id")
+    private Author authors;
+
+    @ManyToOne
+    @JoinColumn(name = "rating_id")
+    private Rating ratings;
+
     private Time prep_time;
     private Time cook_time;
     private Time total_time;
     private int yields;
     private String path;
 
-    public Recipes(int recipe_id, String recipe_name, String site_name, int author_id, int rating_id, Time prep_time,
-                   Time cook_time, Time total_time, int yields, String path) {
+    public Recipe(int recipe_id, String recipe_name, String site_name, Time prep_time, Time cook_time, Time total_time,
+                  int yields, String path) {
         this.recipe_id = recipe_id;
         this.recipe_name = recipe_name;
         this.site_name = site_name;
-        this.author_id = author_id;
-        this.rating_id = rating_id;
         this.prep_time = prep_time;
         this.cook_time = cook_time;
         this.total_time = total_time;
@@ -61,20 +65,20 @@ public class Recipes {
         this.site_name = site_name;
     }
 
-    public int getAuthor_id() {
-        return author_id;
+    public Author getAuthors() {
+        return authors;
     }
 
-    public void setAuthor_id(int author_id) {
-        this.author_id = author_id;
+    public void setAuthors(Author authors) {
+        this.authors = authors;
     }
 
-    public int getRating_id() {
-        return rating_id;
+    public Rating getRatings() {
+        return ratings;
     }
 
-    public void setRating_id(int rating_id) {
-        this.rating_id = rating_id;
+    public void setRatings(Rating ratings) {
+        this.ratings = ratings;
     }
 
     public Time getPrep_time() {
@@ -128,7 +132,7 @@ public class Recipes {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Recipes other = (Recipes) obj;
+        final Recipe other = (Recipe) obj;
         if (!Objects.equals(this.recipe_name, other.recipe_name)) {
             return false;
         }

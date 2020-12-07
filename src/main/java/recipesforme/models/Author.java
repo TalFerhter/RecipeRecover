@@ -1,10 +1,11 @@
-package org.openu.recipesForMe.Models;
+package recipesforme.models;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.Objects;
 
 @Entity
-@Table(name = "Authors")
+@Table(name = "authors")
 public class Author {
 
     @Id
@@ -12,6 +13,11 @@ public class Author {
     private int author_id;
 
     private String author_name;
+
+    @OneToMany(mappedBy = "authors")
+    private Collection<Recipe> recipes;
+
+    protected Author() {}
 
     public Author(int author_id, String author_name) {
         this.author_id = author_id;
@@ -32,6 +38,14 @@ public class Author {
 
     public void setAuthor_name(String author_name) {
         this.author_name = author_name;
+    }
+
+    public Collection<Recipe> getRecipes() {
+        return recipes;
+    }
+
+    public void setRecipes(Collection<Recipe> recipes) {
+        this.recipes = recipes;
     }
 
     @Override

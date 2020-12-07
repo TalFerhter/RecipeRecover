@@ -1,4 +1,4 @@
-package org.openu.recipesForMe.Models;
+package recipesforme.models;
 
 import javax.persistence.*;
 import java.util.Objects;
@@ -12,6 +12,8 @@ public class Paragraph {
     private int paragraph_id;
 
     private String title;
+
+    protected Paragraph() {}
 
     public Paragraph(int paragraphId, String title) {
         this.paragraph_id = paragraphId;

@@ -1,6 +1,7 @@
-package org.openu.recipesForMe.Models;
+package recipesforme.models;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -11,25 +12,33 @@ public class Position {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int pos_id;
 
-    // Do I need to use the model paragraph?
-    private int paragraph_id;
+    @ManyToOne
+    private Paragraph paragraph;
+
     private int row;
     private int col;
 
+    @ManyToMany(mappedBy = "positions")
+    private List<Word> words;
+
+    @ManyToMany(mappedBy = "positions")
+    private List<Phrase> phrases;
+
+    protected Position() {}
+
     // Do I need to generate the pos_id or to set it?
-    public Position(int pos_id, int paragraph_id, int row, int col) {
+    public Position(int pos_id, int row, int col) {
         this.pos_id = pos_id;
-        this.paragraph_id = paragraph_id;
         this.row = row;
         this.col = col;
     }
 
-    public int getParagraph_id() {
-        return paragraph_id;
+    public Paragraph getParagraph() {
+        return paragraph;
     }
 
-    public void setParagraph_id(int paragraph_id) {
-        this.paragraph_id = paragraph_id;
+    public void setParagraph(Paragraph paragraph) {
+        this.paragraph = paragraph;
     }
 
     public int getRow() {
@@ -60,7 +69,7 @@ public class Position {
             return false;
         }
         final Position other = (Position) obj;
-        if (!Objects.equals(this.paragraph_id, other.paragraph_id)) {
+        if (!Objects.equals(this.paragraph, other.paragraph)) {
             return false;
         }
         if (this.row != other.row) {
@@ -76,7 +85,7 @@ public class Position {
     public String toString() {
         final StringBuilder sb = new StringBuilder("Position{");
         sb.append("pos_id = ").append(pos_id);
-        sb.append(", paragraph_id = '").append(paragraph_id).append("'");
+        sb.append(", paragraph_id = '").append(paragraph).append("'");
         sb.append(", row = ").append(row);
         sb.append(", col = ").append(col).append("}");
         return sb.toString();
