@@ -1,7 +1,7 @@
-package recipesforme.Services;
+package recipesforme.services;
 
 import recipesforme.models.Word;
-import recipesforme.Repositories.WordRepository;
+import recipesforme.repositories.WordRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

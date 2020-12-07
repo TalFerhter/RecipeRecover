@@ -1,4 +1,4 @@
-package recipesforme.Services;
+package recipesforme.services;
 
 import recipesforme.models.Word;
 

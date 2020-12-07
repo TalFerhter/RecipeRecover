@@ -1,4 +1,4 @@
-package recipesforme.Repositories;
+package recipesforme.repositories;
 
 import recipesforme.models.Word;
 import org.springframework.data.repository.CrudRepository;

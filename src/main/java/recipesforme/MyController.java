@@ -1,7 +1,7 @@
 package recipesforme;
 
 import recipesforme.models.Word;
-import recipesforme.Services.IWordService;
+import recipesforme.services.IWordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
