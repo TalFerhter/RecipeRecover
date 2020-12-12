@@ -5,38 +5,38 @@ import java.util.Collection;
 import java.util.Objects;
 
 @Entity
-@Table(name = "authors")
-public class Author {
+@Table(name = "levels")
+public class Level {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private int author_id;
+    private int level_id;
 
-    private String author_name;
+    private String level_name;
 
-    @OneToMany(mappedBy = "authors")
+    @OneToMany(mappedBy = "levels")
     private Collection<Recipe> recipes;
 
-    protected Author() {}
+    protected Level() {}
 
-    public Author(String author_name) {
-        this.author_name = author_name;
+    public Level(String level_name) {
+        this.level_name = level_name;
     }
 
     public int getAuthor_id() {
-        return author_id;
+        return level_id;
     }
 
-    public void setAuthor_id(int author_id) {
-        this.author_id = author_id;
+    public void setAuthor_id(int level_id) {
+        this.level_id = level_id;
     }
 
     public String getAuthor_name() {
-        return author_name;
+        return level_name;
     }
 
-    public void setAuthor_name(String author_name) {
-        this.author_name = author_name;
+    public void setAuthor_name(String level_name) {
+        this.level_name = level_name;
     }
 
     public Collection<Recipe> getRecipes() {
@@ -58,18 +58,18 @@ public class Author {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Author other = (Author) obj;
-        if (!Objects.equals(this.author_name, other.author_name)) {
+        final Level other = (Level) obj;
+        if (!Objects.equals(this.level_name, other.level_name)) {
             return false;
         }
-        return Objects.equals(this.author_id, other.author_id);
+        return Objects.equals(this.level_id, other.level_id);
     }
 
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Author{");
-        sb.append("author_id = ").append(author_id);
-        sb.append(", name = '").append(author_name).append("'}");
+        sb.append("level_id = ").append(level_id);
+        sb.append(", name = '").append(level_name).append("'}");
         return sb.toString();
     }
 }

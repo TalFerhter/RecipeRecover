@@ -27,8 +27,7 @@ public class Position {
     protected Position() {}
 
     // Do I need to generate the pos_id or to set it?
-    public Position(int pos_id, int row, int col) {
-        this.pos_id = pos_id;
+    public Position(int row, int col) {
         this.row = row;
         this.col = col;
     }

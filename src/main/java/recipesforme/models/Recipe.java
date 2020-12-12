@@ -21,8 +21,8 @@ public class Recipe {
     private Author authors;
 
     @ManyToOne
-    @JoinColumn(name = "rating_id")
-    private Rating ratings;
+    @JoinColumn(name = "level_id")
+    private Level levels;
 
     private Time prep_time;
     private Time cook_time;
@@ -30,6 +30,8 @@ public class Recipe {
     private int yields;
     private String path;
     private Date date;
+
+    public Recipe() {}
 
     public Recipe(int recipe_id, String recipe_name, String site_name, Time prep_time, Time cook_time, Time total_time,
                   int yields, String path, Date date) {
@@ -44,27 +46,27 @@ public class Recipe {
         this.date = date;
     }
 
-    public int getRecipe_id() {
+    public int getRecipeId() {
         return recipe_id;
     }
 
-    public void setRecipe_id(int recipe_id) {
+    public void setRecipeId(int recipe_id) {
         this.recipe_id = recipe_id;
     }
 
-    public String getRecipe_name() {
+    public String getRecipeName() {
         return recipe_name;
     }
 
-    public void setRecipe_name(String recipe_name) {
+    public void setRecipeName(String recipe_name) {
         this.recipe_name = recipe_name;
     }
 
-    public String getSite_name() {
+    public String getSiteName() {
         return site_name;
     }
 
-    public void setSite_name(String site_name) {
+    public void setSiteName(String site_name) {
         this.site_name = site_name;
     }
 
@@ -76,35 +78,35 @@ public class Recipe {
         this.authors = authors;
     }
 
-    public Rating getRatings() {
-        return ratings;
+    public Level getRatings() {
+        return levels;
     }
 
-    public void setRatings(Rating ratings) {
-        this.ratings = ratings;
+    public void setRatings(Level levels) {
+        this.levels = levels;
     }
 
-    public Time getPrep_time() {
+    public Time getPrepTime() {
         return prep_time;
     }
 
-    public void setPrep_time(Time prep_time) {
+    public void setPrepTime(Time prep_time) {
         this.prep_time = prep_time;
     }
 
-    public Time getCook_time() {
+    public Time getCookTime() {
         return cook_time;
     }
 
-    public void setCook_time(Time cook_time) {
+    public void setCookTime(Time cook_time) {
         this.cook_time = cook_time;
     }
 
-    public Time getTotal_time() {
+    public Time getTotalTime() {
         return total_time;
     }
 
-    public void setTotal_time(Time total_time) {
+    public void setTotalTime(Time total_time) {
         this.total_time = total_time;
     }
 
@@ -173,6 +175,7 @@ public class Recipe {
         sb.append(", cooking time = ").append(cook_time);
         sb.append(", total time = ").append(total_time);
         sb.append(", yields = ").append(yields);
+        sb.append(", level = ").append(levels);
         sb.append(", path = '").append(path);
         sb.append(", publish date = '").append(date).append("}");
         return sb.toString();
