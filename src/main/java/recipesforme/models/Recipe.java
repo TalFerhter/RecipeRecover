@@ -1,6 +1,7 @@
 package recipesforme.models;
 
 import javax.persistence.*;
+import java.sql.Date;
 import java.sql.Time;
 import java.util.Objects;
 
@@ -28,9 +29,10 @@ public class Recipe {
     private Time total_time;
     private int yields;
     private String path;
+    private Date date;
 
     public Recipe(int recipe_id, String recipe_name, String site_name, Time prep_time, Time cook_time, Time total_time,
-                  int yields, String path) {
+                  int yields, String path, Date date) {
         this.recipe_id = recipe_id;
         this.recipe_name = recipe_name;
         this.site_name = site_name;
@@ -39,6 +41,7 @@ public class Recipe {
         this.total_time = total_time;
         this.yields = yields;
         this.path = path;
+        this.date = date;
     }
 
     public int getRecipe_id() {
@@ -121,6 +124,10 @@ public class Recipe {
         this.path = path;
     }
 
+    public Date getDate() { return date; }
+
+    public void setDate(Date date) { this.date = date; }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -166,7 +173,8 @@ public class Recipe {
         sb.append(", cooking time = ").append(cook_time);
         sb.append(", total time = ").append(total_time);
         sb.append(", yields = ").append(yields);
-        sb.append(", path = '").append(path).append("}");
+        sb.append(", path = '").append(path);
+        sb.append(", publish date = '").append(date).append("}");
         return sb.toString();
     }
 }

@@ -13,4 +13,6 @@ public interface AuthorRepository extends CrudRepository<Author, Integer> {
     Optional<Author> findById(int authorId);
 
     Iterable<Author> findAll();
+
+    <S extends Author> S save(S s);
 }
