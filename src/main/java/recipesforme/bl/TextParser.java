@@ -3,10 +3,7 @@ package recipesforme.bl;
 import org.apache.commons.validator.GenericValidator;
 import org.springframework.data.util.Pair;
 import org.springframework.web.multipart.MultipartFile;
-import recipesforme.models.Author;
-import recipesforme.models.Position;
-import recipesforme.models.Recipe;
-import recipesforme.models.Word;
+import recipesforme.models.*;
 
 
 import java.io.*;
@@ -49,9 +46,10 @@ public class TextParser {
                     recipe.setAuthors(author);
                     recipe.setSiteName(title[2]);
                 } else if (line.contains("Level")) {
+                    Level level = new Level(line);
 
                 } else if (line.contains("Total")) {
-
+                    //recipe.setTotalTime();
                 } else if (line.contains("Active") || line.contains("Prep")) {
 
                 } else if (line.contains("Cook")) {

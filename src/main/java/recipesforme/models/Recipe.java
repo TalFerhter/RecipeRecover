@@ -78,7 +78,7 @@ public class Recipe {
         this.authors = authors;
     }
 
-    public Level getRatings() {
+    public Level getLevels() {
         return levels;
     }
 
