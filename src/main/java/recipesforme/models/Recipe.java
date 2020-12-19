@@ -1,7 +1,7 @@
 package recipesforme.models;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.util.Date;
 import java.sql.Time;
 import java.util.Objects;
 
@@ -27,21 +27,24 @@ public class Recipe {
     private Time prep_time;
     private Time cook_time;
     private Time total_time;
-    private int yields;
+    private int min_yield;
+    private int max_yield;
     private String path;
     private Date date;
 
-    public Recipe() {}
+    public Recipe() {
+    }
 
-    public Recipe(int recipe_id, String recipe_name, String site_name, Time prep_time, Time cook_time, Time total_time,
-                  int yields, String path, Date date) {
-        this.recipe_id = recipe_id;
+    public Recipe(String recipe_name, String site_name, Time prep_time,
+                  Time cook_time, Time total_time, int min_yield, int max_yield,
+                  String path, Date date) {
         this.recipe_name = recipe_name;
         this.site_name = site_name;
         this.prep_time = prep_time;
         this.cook_time = cook_time;
         this.total_time = total_time;
-        this.yields = yields;
+        this.min_yield = min_yield;
+        this.max_yield = max_yield;
         this.path = path;
         this.date = date;
     }
@@ -82,7 +85,7 @@ public class Recipe {
         return levels;
     }
 
-    public void setRatings(Level levels) {
+    public void setLevels(Level levels) {
         this.levels = levels;
     }
 
@@ -110,12 +113,20 @@ public class Recipe {
         this.total_time = total_time;
     }
 
-    public int getYields() {
-        return yields;
+    public int getMinYield() {
+        return min_yield;
     }
 
-    public void setYields(int yields) {
-        this.yields = yields;
+    public void setMinYield(int minYield) {
+        this.min_yield = minYield;
+    }
+
+    public int getMaxYield() {
+        return max_yield;
+    }
+
+    public void setMaxYield(int maxYield) {
+        this.max_yield = maxYield;
     }
 
     public String getPath() {
@@ -126,9 +137,13 @@ public class Recipe {
         this.path = path;
     }
 
-    public Date getDate() { return date; }
+    public Date getDate() {
+        return date;
+    }
 
-    public void setDate(Date date) { this.date = date; }
+    public void setDate(Date date) {
+        this.date = date;
+    }
 
     @Override
     public boolean equals(Object obj) {
@@ -157,7 +172,7 @@ public class Recipe {
         if (this.total_time != other.total_time) {
             return false;
         }
-        if (this.yields != other.yields) {
+        if (this.min_yield != other.min_yield) {
             return false;
         }
         if (!Objects.equals(this.path, other.path)) {
@@ -174,7 +189,7 @@ public class Recipe {
         sb.append(", preparation time = ").append(prep_time);
         sb.append(", cooking time = ").append(cook_time);
         sb.append(", total time = ").append(total_time);
-        sb.append(", yields = ").append(yields);
+        sb.append(", yields = ").append(min_yield).append(" to ").append(max_yield);
         sb.append(", level = ").append(levels);
         sb.append(", path = '").append(path);
         sb.append(", publish date = '").append(date).append("}");

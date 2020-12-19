@@ -13,7 +13,7 @@ public class Paragraph {
 
     private String title;
 
-    protected Paragraph() {}
+    public Paragraph() {}
 
     public Paragraph(int paragraphId, String title) {
         this.paragraph_id = paragraphId;

@@ -24,7 +24,7 @@ public class Word {
             inverseJoinColumns = @JoinColumn(name = "group_id", referencedColumnName = "group_id"))
     private List<Group> groups;
 
-    protected Word() {}
+    public Word() {}
 
     public Word(String word) {
         this.word = word;

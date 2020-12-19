@@ -1,8 +1,10 @@
 package recipesforme.models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 @Entity
 @Table(name = "positions")
@@ -19,12 +21,12 @@ public class Position {
     private int col;
 
     @ManyToMany(mappedBy = "positions")
-    private List<Word> words;
+    private List<Word> words = new ArrayList<>();
 
     @ManyToMany(mappedBy = "positions")
-    private List<Phrase> phrases;
+    private List<Phrase> phrases = new ArrayList<>();
 
-    protected Position() {}
+    public Position(int row, int col, Paragraph currParagraph) {}
 
     // Do I need to generate the pos_id or to set it?
     public Position(int row, int col) {
@@ -54,6 +56,22 @@ public class Position {
 
     public void setCol(int col) {
         this.col = col;
+    }
+
+    public List<Word> getWords() {
+        return words;
+    }
+
+    public void setWords(Word word) {
+        this.words.add(word);
+    }
+
+    public List<Phrase> getPhrases() {
+        return phrases;
+    }
+
+    public void setPhrases(Phrase phrase) {
+        this.phrases.add(phrase);
     }
 
     @Override

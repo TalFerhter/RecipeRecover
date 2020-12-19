@@ -8,14 +8,17 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class WordService implements IWordService {
+public class WordService {
 
     @Autowired
     private WordRepository repository;
 
-    @Override
     public List<Word> findAll() {
         var words = (List<Word>) repository.findAll();
         return words;
+    }
+
+    public <S extends Word> Iterable<S> saveAll(Iterable<S> entities) {
+        return repository.saveAll(entities);
     }
 }
