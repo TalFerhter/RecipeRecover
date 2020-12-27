@@ -2,8 +2,10 @@ package recipesforme.models;
 
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "words")
@@ -16,13 +18,13 @@ public class Word {
     @JoinTable(name = "words_positions",
         joinColumns = @JoinColumn(name = "word", referencedColumnName = "word"),
         inverseJoinColumns = @JoinColumn(name = "pos_id", referencedColumnName = "pos_id"))
-    private List<Position> positions;
+    private Set<Position> positions =  new HashSet<>();
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "groups_words",
             joinColumns = @JoinColumn(name = "word", referencedColumnName = "word"),
             inverseJoinColumns = @JoinColumn(name = "group_id", referencedColumnName = "group_id"))
-    private List<Group> groups;
+    private Set<Group> groups;
 
     public Word() {}
 
@@ -36,6 +38,30 @@ public class Word {
 
     public void setWord(String word) {
         this.word = word;
+    }
+
+    public Set<Position> getPositions() {
+        return positions;
+    }
+
+    public void setPositions(Set<Position> positions) {
+        this.positions = positions;
+    }
+
+    public Set<Group> getGroups() {
+        return groups;
+    }
+
+    public void setGroups(Set<Group> groups) {
+        this.groups = groups;
+    }
+
+    public void addPosition(Position position) {
+        this.positions.add(position);
+    }
+
+    public void addGroup(Group group){
+        this.groups.add(group);
     }
 
     // Do I need this?

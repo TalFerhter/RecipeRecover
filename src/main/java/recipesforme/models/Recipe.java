@@ -4,14 +4,14 @@ import javax.persistence.*;
 import java.util.Date;
 import java.sql.Time;
 import java.util.Objects;
+import java.util.UUID;
 
 @Entity
 @Table(name = "recipes")
 public class Recipe {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private int recipe_id;
+    private UUID recipe_id;
 
     private String recipe_name;
     private String site_name;
@@ -24,36 +24,40 @@ public class Recipe {
     @JoinColumn(name = "level_id")
     private Level levels;
 
-    private Time prep_time;
-    private Time cook_time;
-    private Time total_time;
-    private int min_yield;
-    private int max_yield;
+    private Time prepTime;
+    private Time cookTime;
+    private Time totalTime;
+    private int yieldMin;
+    private int yieldMax;
     private String path;
+
+    @Temporal(TemporalType.DATE)
     private Date date;
 
     public Recipe() {
+        this.recipe_id = UUID.randomUUID();
     }
 
     public Recipe(String recipe_name, String site_name, Time prep_time,
                   Time cook_time, Time total_time, int min_yield, int max_yield,
                   String path, Date date) {
+        this.recipe_id = UUID.randomUUID();
         this.recipe_name = recipe_name;
         this.site_name = site_name;
-        this.prep_time = prep_time;
-        this.cook_time = cook_time;
-        this.total_time = total_time;
-        this.min_yield = min_yield;
-        this.max_yield = max_yield;
+        this.prepTime = prep_time;
+        this.cookTime = cook_time;
+        this.totalTime = total_time;
+        this.yieldMin = min_yield;
+        this.yieldMax = max_yield;
         this.path = path;
         this.date = date;
     }
 
-    public int getRecipeId() {
+    public UUID getRecipeId() {
         return recipe_id;
     }
 
-    public void setRecipeId(int recipe_id) {
+    public void setRecipeId(UUID recipe_id) {
         this.recipe_id = recipe_id;
     }
 
@@ -90,43 +94,43 @@ public class Recipe {
     }
 
     public Time getPrepTime() {
-        return prep_time;
+        return prepTime;
     }
 
     public void setPrepTime(Time prep_time) {
-        this.prep_time = prep_time;
+        this.prepTime = prep_time;
     }
 
     public Time getCookTime() {
-        return cook_time;
+        return cookTime;
     }
 
     public void setCookTime(Time cook_time) {
-        this.cook_time = cook_time;
+        this.cookTime = cook_time;
     }
 
     public Time getTotalTime() {
-        return total_time;
+        return totalTime;
     }
 
     public void setTotalTime(Time total_time) {
-        this.total_time = total_time;
+        this.totalTime = total_time;
     }
 
     public int getMinYield() {
-        return min_yield;
+        return yieldMin;
     }
 
     public void setMinYield(int minYield) {
-        this.min_yield = minYield;
+        this.yieldMin = minYield;
     }
 
     public int getMaxYield() {
-        return max_yield;
+        return yieldMax;
     }
 
     public void setMaxYield(int maxYield) {
-        this.max_yield = maxYield;
+        this.yieldMax = maxYield;
     }
 
     public String getPath() {
@@ -163,16 +167,19 @@ public class Recipe {
         if (!Objects.equals(this.site_name, other.site_name)) {
             return false;
         }
-        if (this.prep_time != other.prep_time) {
+        if (this.prepTime != other.prepTime) {
             return false;
         }
-        if (this.cook_time != other.cook_time) {
+        if (this.cookTime != other.cookTime) {
             return false;
         }
-        if (this.total_time != other.total_time) {
+        if (this.totalTime != other.totalTime) {
             return false;
         }
-        if (this.min_yield != other.min_yield) {
+        if (this.yieldMin != other.yieldMin) {
+            return false;
+        }
+        if (this.yieldMax != other.yieldMax) {
             return false;
         }
         if (!Objects.equals(this.path, other.path)) {
@@ -186,10 +193,10 @@ public class Recipe {
         final StringBuilder sb = new StringBuilder("Recipe{");
         sb.append("name = '").append(recipe_name).append("'");
         sb.append(", site = '").append(site_name).append("'");
-        sb.append(", preparation time = ").append(prep_time);
-        sb.append(", cooking time = ").append(cook_time);
-        sb.append(", total time = ").append(total_time);
-        sb.append(", yields = ").append(min_yield).append(" to ").append(max_yield);
+        sb.append(", preparation time = ").append(prepTime);
+        sb.append(", cooking time = ").append(cookTime);
+        sb.append(", total time = ").append(totalTime);
+        sb.append(", yields = ").append(yieldMin).append(" to ").append(yieldMax);
         sb.append(", level = ").append(levels);
         sb.append(", path = '").append(path);
         sb.append(", publish date = '").append(date).append("}");

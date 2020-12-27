@@ -1,4 +1,4 @@
-package recipesforme.services;
+package recipesforme.bl.services;
 
 public class StorageFileNotFoundException extends StorageException {
 

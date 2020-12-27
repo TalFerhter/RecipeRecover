@@ -1,4 +1,4 @@
-package recipesforme.services;
+package recipesforme.bl.services;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

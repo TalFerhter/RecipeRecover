@@ -2,34 +2,32 @@ package recipesforme.models;
 
 
 import javax.persistence.*;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 @Entity
 @Table(name = "groups")
 public class Group {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private int group_id;
+    private UUID group_id;
 
     private String title;
 
     @ManyToMany(mappedBy = "groups")
-    private List<Word> words;
+    private Set<Word> words = new HashSet<>();
 
     protected Group() {}
 
-    public Group(int group_id, String title) {
-        this.group_id = group_id;
+    public Group(String title) {
+        this.group_id = UUID.randomUUID();
         this.title = title;
     }
 
-    public int getGroup_id() {
+    public UUID getGroup_id() {
         return group_id;
     }
 
-    public void setGroup_id(int group_id) {
+    public void setGroup_id(UUID group_id) {
         this.group_id = group_id;
     }
 
@@ -39,6 +37,22 @@ public class Group {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public Set<Word> getWords() {
+        return words;
+    }
+
+    public void setWords(Set<Word> words) {
+        this.words = words;
+    }
+
+    public void addWord(Word word){
+        this.words.add(word);
+    }
+
+    public void addWords(Set<Word> words){
+        this.words.addAll(words);
     }
 
     @Override

@@ -3,35 +3,36 @@ package recipesforme.models;
 import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
+import java.util.UUID;
 
 @Entity
 @Table(name = "phrases")
 public class Phrase {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private int phrase_id;
+    private UUID phrase_id;
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "phrases_positions",
             joinColumns = @JoinColumn(name = "phrase_id", referencedColumnName = "phrase_id"),
             inverseJoinColumns = @JoinColumn(name = "pos_id", referencedColumnName = "pos_id"))
-    private List<Position> positions;
+    private Set<Position> positions;
 
     private String text;
 
     protected Phrase() {}
 
-    public Phrase(int phrase_id, String text) {
-        this.phrase_id = phrase_id;
+    public Phrase(String text) {
+        this.phrase_id = UUID.randomUUID();
         this.text = text;
     }
 
-    public int getPhrase_id() {
+    public UUID getPhrase_id() {
         return phrase_id;
     }
 
-    public void setPhrase_id(int phrase_id) {
+    public void setPhrase_id(UUID phrase_id) {
         this.phrase_id = phrase_id;
     }
 

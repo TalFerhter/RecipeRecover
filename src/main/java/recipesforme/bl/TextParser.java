@@ -1,12 +1,12 @@
 package recipesforme.bl;
 
 import org.apache.commons.validator.GenericValidator;
-import org.springframework.data.util.Pair;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
+import recipesforme.bl.services.*;
 import recipesforme.models.*;
-import recipesforme.services.ParagraphService;
-import recipesforme.services.PositionService;
-import recipesforme.services.WordService;
 
 
 import java.io.*;
@@ -16,31 +16,58 @@ import java.sql.Time;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
+@Component
 public class TextParser {
+
+    @Autowired
+    private WordService wordService;
+
+    @Autowired
+    private PositionService positionService;
+
+    @Autowired
+    private ParagraphService paragraphService;
+
+    @Autowired
+    private RecipeService recipeService;
+
+    @Autowired
+    private AuthorService authorService;
+
+    @Autowired
+    private LevelService levelService;
 
     // Main recipe
     Recipe recipe;
     List<Word> wordsList;
     List<Position> positionList;
+    List<Paragraph> paragraphList;
 
     public void parseRecipe(MultipartFile path) {
-        wordsList = new ArrayList<>();
-        positionList = new ArrayList<>();
-        recipe = new Recipe();
-        Paragraph currParagraph = new Paragraph();
+
+        this.wordsList = new ArrayList<>();
+        this.positionList = new ArrayList<>();
+        this.recipe = new Recipe();
+        this.paragraphList = new ArrayList<>();
+        this.paragraphList = this.paragraphService.findAll();
+        Paragraph currParagraph;
+        if (this.paragraphList.isEmpty()){
+            currParagraph = new Paragraph();
+            this.paragraphService.save(currParagraph);
+        } else {
+            currParagraph = this.paragraphList.get(0);
+        }
 
         try {
             InputStream inputStream = path.getInputStream();
             List<String> allLines = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8))
                     .lines().collect(Collectors.toList());
-            String[] lines = (String[]) allLines.stream().filter(s -> !s.isEmpty()).toArray();
+            String[] lines = allLines.stream().filter(s -> !s.isEmpty()).toArray(String[]::new);
             for (int row = 0; row < lines.length; row++) {
                 Paragraph temp = isParagraph(lines[row]);
                 if (temp != null) {
@@ -50,43 +77,60 @@ public class TextParser {
                 if (isDate) {
                     setDate(lines[row]);
                 } else if (GenericValidator.isUrl(lines[row])) {
-                    recipe.setPath(lines[row]);
+                    this.recipe.setPath(lines[row]);
                 } else if (lines[row].contains("|")) {
                     setTitleDetails(lines[row]);
                 } else if (lines[row].contains("Level")) {
-                    Level level = new Level(lines[row]);
-                    recipe.setLevels(level);
-                } else if (lines[row].contains("Active") || lines[row].contains("Prep")
-                        || lines[row].contains("Cook") || lines[row].contains("Total")) {
+                    setLevel(lines[row].split(": ")[1]);
+                } else if (lines[row].contains("Active:") || lines[row].contains("Prep:")
+                        || lines[row].contains("Cook:") || lines[row].contains("Total:")) {
                     setTime(lines[row]);
-                } else if (lines[row].contains("Yield")) {
+                } else if (lines[row].contains("Yield:")) {
                     setYields(lines[row]);
                 } //else if (line.contains(paragraph)
 
                 // Take care of the words
-                setLineWords(lines[row], currParagraph, row);
+                if (!isDate && !GenericValidator.isUrl(lines[row])) {
+                    setLineWords(lines[row], currParagraph, row);
+                }
             }
 
-            new WordService().saveAll(wordsList);
-            new PositionService().saveAll(positionList);
+            this.wordService.saveAll(this.wordsList);
+            this.positionService.saveAll(this.positionList);
+            this.recipeService.save(this.recipe);
 
         } catch (Exception e) {
             e.printStackTrace();
+            this.recipeService.delete(this.recipe);
         }
     }
 
+    private void setLevel(String line) {
+        Level level = new Level(line);
+        Optional<Level> temp = levelService.findByLevelName(line);
+        if (!temp.isPresent()) {
+            this.levelService.save(level);
+        } else {
+            level = temp.get();
+        }
+        this.recipe.setLevels(level);
+    }
+
     private Paragraph isParagraph(String line) {
-        List<Paragraph> paragraphs = new ParagraphService().findByTitle(line.split(":")[0]);
-        return (paragraphs.size()>0?paragraphs.get(0):null);
+        int index = this.paragraphList.indexOf(line.split(":")[0]);
+        return ((index >= 0) ? this.paragraphList.get(index) : null);
     }
 
     public void setLineWords(String line, Paragraph paragraph, int row) {
-        String[] words = (String[]) Arrays.stream(line.split("\\s")).filter(s -> !s.isEmpty()).toArray();
-        for (int col = 1; col <= words.length; col++) {
+        String[] words = Arrays.stream(line.replaceAll("\\p{Punct}", "")
+                .split("\\s")).filter(s -> !s.isEmpty()).toArray(String[]::new);
+        for (int col = 0; col < words.length; col++) {
             Word newWord = new Word(words[col]);
-            wordsList.add(newWord);
-            Position newPos = new Position(row, col, paragraph);
-            positionList.add(newPos);
+            Position newPos = new Position(row, col+1, this.recipe, paragraph);
+            newWord.addPosition(newPos);
+            this.wordsList.add(newWord);
+            newPos.setWord(newWord);
+            this.positionList.add(newPos);
         }
     }
 
@@ -102,13 +146,10 @@ public class TextParser {
         return date;
     }
 
-    public void createPosition() {
-    }
-
     private void setDate(String dateStr) {
         try {
             SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-            recipe.setDate(formatter.parse(dateStr));
+            this.recipe.setDate(formatter.parse(dateStr));
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -120,41 +161,50 @@ public class TextParser {
         Matcher matcher = pattern.matcher(strTime);
         matcher.matches();
         String timeType = matcher.group(1);
-        String timeString = (matcher.groupCount() > 3) ? (matcher.group(3) + ":" + matcher.group(6))
-                : ("00:" + matcher.group(3)) + ":00";
-        Time time = Time.valueOf(timeString);
+        String hr = (matcher.group(2) == null) ? "00" : matcher.group(2);
+        String min = (matcher.group(3) == null) ? "00" : matcher.group(3);
+        Time time = Time.valueOf(hr + ":" + min + ":00");
         switch (timeType) {
             case "Total":
-                recipe.setTotalTime(time);
+                this.recipe.setTotalTime(time);
                 break;
 
             case "Cook":
-                recipe.setCookTime(time);
+                this.recipe.setCookTime(time);
                 break;
 
             case "Prep":
 
             case "Active":
-                recipe.setPrepTime(time);
+                this.recipe.setPrepTime(time);
                 break;
         }
     }
 
+    @Transactional
     private void setTitleDetails(String title) {
         String[] titleParts = title.split(" \\| ");
-        recipe.setRecipeName(titleParts[0]);
-        Author author = new Author(titleParts[1]);
-        recipe.setAuthors(author);
-        recipe.setSiteName(titleParts[2]);
+        this.recipe.setRecipeName(titleParts[0]);
+        this.setAuthor(titleParts[1]);
+        this.recipe.setSiteName(titleParts[2]);
+    }
+
+    private void setAuthor(String author){
+        Optional<Author> a = this.authorService.findByAuthorName(author);
+        if (!a.isPresent()) {
+            this.recipe.setAuthors(this.authorService.save(new Author(author)));
+        } else {
+            this.recipe.setAuthors(a.get());
+        }
     }
 
     private void setYields(String line) {
         Pattern pattern = Pattern.compile("(Yield:) (((?:(\\d*) (?:to) )?)(?:(\\d*)) servings)");
         Matcher matcher = pattern.matcher(line);
         matcher.matches();
-        recipe.setMinYield(Integer.parseInt(matcher.group(2)));
-        if (matcher.groupCount() > 3) {
-            recipe.setMaxYield(Integer.parseInt(matcher.group(3)));
+        this.recipe.setMinYield(Integer.parseInt(matcher.group(5)));
+        if (matcher.groupCount() > 6) {
+            this.recipe.setMaxYield(Integer.parseInt(matcher.group(8)));
         }
     }
 }

@@ -1,41 +1,40 @@
 package recipesforme.models;
 
 import javax.persistence.*;
-import java.util.Collection;
-import java.util.Objects;
+import java.util.*;
 
 @Entity
 @Table(name = "levels")
 public class Level {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private int level_id;
+    private UUID level_id;
 
     private String level_name;
 
     @OneToMany(mappedBy = "levels")
-    private Collection<Recipe> recipes;
+    private Set<Recipe> recipes = new HashSet<>();
 
-    protected Level() {}
+    public Level() {}
 
     public Level(String level_name) {
+        this.level_id = UUID.randomUUID();
         this.level_name = level_name;
     }
 
-    public int getAuthor_id() {
+    public UUID getLevel_id() {
         return level_id;
     }
 
-    public void setAuthor_id(int level_id) {
+    public void setLevel_id(UUID level_id) {
         this.level_id = level_id;
     }
 
-    public String getAuthor_name() {
+    public String getLevel_name() {
         return level_name;
     }
 
-    public void setAuthor_name(String level_name) {
+    public void setLevel_name(String level_name) {
         this.level_name = level_name;
     }
 
@@ -43,7 +42,7 @@ public class Level {
         return recipes;
     }
 
-    public void setRecipes(Collection<Recipe> recipes) {
+    public void setRecipes(Set<Recipe> recipes) {
         this.recipes = recipes;
     }
 

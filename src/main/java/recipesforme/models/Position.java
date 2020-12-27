@@ -1,37 +1,48 @@
 package recipesforme.models;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.*;
 
 @Entity
 @Table(name = "positions")
 public class Position {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private int pos_id;
+    private UUID pos_id;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "recipe_id")
+    private Recipe recipe;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "paragraph_id")
     private Paragraph paragraph;
 
     private int row;
     private int col;
 
-    @ManyToMany(mappedBy = "positions")
-    private List<Word> words = new ArrayList<>();
+    @ManyToMany(mappedBy = "positions", fetch = FetchType.LAZY)
+    private Set<Word> words = new HashSet<>();
 
     @ManyToMany(mappedBy = "positions")
-    private List<Phrase> phrases = new ArrayList<>();
+    private Set<Phrase> phrases = new HashSet<>();
 
-    public Position(int row, int col, Paragraph currParagraph) {}
+    public Position() {}
 
-    // Do I need to generate the pos_id or to set it?
-    public Position(int row, int col) {
+    public Position(int row, int col, Recipe recipe, Paragraph currParagraph) {
+        this.pos_id = UUID.randomUUID();
         this.row = row;
         this.col = col;
+        this.recipe = recipe;
+        this.paragraph = currParagraph;
+    }
+
+    public UUID getPos_id() {
+        return pos_id;
+    }
+
+    public void setPos_id(UUID pos_id) {
+        this.pos_id = pos_id;
     }
 
     public Paragraph getParagraph() {
@@ -40,6 +51,14 @@ public class Position {
 
     public void setParagraph(Paragraph paragraph) {
         this.paragraph = paragraph;
+    }
+
+    public Recipe getRecipe() {
+        return recipe;
+    }
+
+    public void setRecipe(Recipe recipe) {
+        this.recipe = recipe;
     }
 
     public int getRow() {
@@ -58,20 +77,28 @@ public class Position {
         this.col = col;
     }
 
-    public List<Word> getWords() {
+    public Set<Word> getWords() {
         return words;
     }
 
-    public void setWords(Word word) {
+    public void setWord(Word word) {
         this.words.add(word);
     }
 
-    public List<Phrase> getPhrases() {
+    public Set<Phrase> getPhrases() {
         return phrases;
     }
 
-    public void setPhrases(Phrase phrase) {
+    public void setPhrase(Phrase phrase) {
         this.phrases.add(phrase);
+    }
+
+    public void setWords(Set<Word> words) {
+        this.words = words;
+    }
+
+    public void setPhrases(Set<Phrase> phrases) {
+        this.phrases = phrases;
     }
 
     @Override

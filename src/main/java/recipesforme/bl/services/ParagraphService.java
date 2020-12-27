@@ -1,4 +1,4 @@
-package recipesforme.services;
+package recipesforme.bl.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -7,6 +7,7 @@ import recipesforme.repositories.ParagraphRepository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class ParagraphService {
@@ -15,19 +16,19 @@ public class ParagraphService {
     private ParagraphRepository repository;
 
     public List<Paragraph> findAll() {
-        var paragraphs = (List<Paragraph>) repository.findAll();
-        return paragraphs;
+        return (List<Paragraph>) repository.findAll();
     }
 
-    public Optional<Paragraph> findById(Integer paragraphId) {
-        var paragraph = repository.findById(paragraphId);
-        return paragraph;
+    public Optional<Paragraph> findById(UUID paragraphId) {
+        return repository.findById(paragraphId);
     }
 
     public List<Paragraph> findByTitle(String title) {
-        List<Paragraph> paragraph = repository.findByTitle(title);
-        return paragraph;
+        return repository.findByTitle(title);
     }
 
+    public <S extends Paragraph> S save(S paragraph) {
+        return repository.save(paragraph);
+    }
 
 }

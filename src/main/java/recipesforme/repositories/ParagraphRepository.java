@@ -7,11 +7,12 @@ import recipesforme.models.Paragraph;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Repository
-public interface ParagraphRepository extends CrudRepository<Paragraph, Integer> {
+public interface ParagraphRepository extends CrudRepository<Paragraph, UUID> {
 
-    Optional<Paragraph> findById(Integer paragraphId);
+    Optional<Paragraph> findById(UUID paragraphId);
 
     Iterable<Paragraph> findAll();
 

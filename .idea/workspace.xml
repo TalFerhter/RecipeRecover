@@ -2,20 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="675e427e-d7f1-4565-a375-5f3a6a0eb8d0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/recipesforme/services/ParagraphService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/recipesforme/services/PositionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/recipesforme/bl/BasicFunctions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/recipesforme/bl/services/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/recipesforme/bl/services/.idea/services.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/recipesforme/bl/services/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/recipesforme/bl/services/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/recipesforme/bl/services/AuthorService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/recipesforme/bl/services/GroupService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/recipesforme/bl/services/LevelService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/recipesforme/bl/services/PhraseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/recipesforme/bl/services/RecipeService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/RecipesForMeApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/RecipesForMeApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/bl/TextParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/bl/TextParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/controllers/TextLoaderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/controllers/TextLoaderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/models/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/models/Author.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/models/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/models/Group.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/models/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/models/Level.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/models/Paragraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/models/Paragraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/models/Phrase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/models/Phrase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/models/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/models/Position.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/models/Recipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/models/Recipe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/models/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/models/Word.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/repositories/AuthorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/repositories/AuthorRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/repositories/GroupRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/repositories/GroupRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/repositories/LevelRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/repositories/LevelRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/repositories/ParagraphRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/repositories/ParagraphRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/repositories/PhraseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/repositories/PhraseRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/repositories/PositionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/repositories/PositionRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/repositories/RecipeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/repositories/RecipeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/repositories/WordRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/repositories/WordRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/services/IWordService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/services/WordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/services/WordService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/services/FileSystemStorageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/bl/services/FileSystemStorageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/services/ParagraphService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/bl/services/ParagraphService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/services/PositionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/bl/services/PositionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/services/StorageException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/bl/services/StorageException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/services/StorageFileNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/bl/services/StorageFileNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/services/StorageProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/bl/services/StorageProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/services/StorageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/bl/services/StorageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/services/WordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/bl/services/WordService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -33,115 +58,69 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/bl/TextParser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="35" column="27" lean-forward="true" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#parseDate#0;class#TextParser#0" />
-                <element signature="method#setDate#0;class#TextParser#0" />
-                <element signature="method#setTime#0;class#TextParser#0" />
-                <element signature="method#setTitleDetails#0;class#TextParser#0" />
-                <element signature="method#setYields#0;class#TextParser#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/services/PositionService.java">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/services/WordService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="21" column="31" lean-forward="true" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#526#527#0" expanded="true" />
-                <element signature="e#555#556#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/models/Recipe.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1976">
-              <caret line="193" column="45" lean-forward="true" selection-start-line="193" selection-start-column="45" selection-end-line="193" selection-end-column="45" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2721#2722#0" expanded="true" />
-                <element signature="e#2762#2763#0" expanded="true" />
-                <element signature="e#2921#2922#0" expanded="true" />
-                <element signature="e#2948#2949#0" expanded="true" />
-                <element signature="e#2986#2987#0" expanded="true" />
-                <element signature="e#3018#3019#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/repositories/ParagraphRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/repositories/WordRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/repositories/LevelRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/repositories/RecipeRepository.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/bl/BasicFunctions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.4.1/spring-data-commons-2.4.1-sources.jar!/org/springframework/data/repository/CrudRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-225">
-              <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/services/ParagraphService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="638">
-              <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+            <state relative-caret-position="1958">
+              <caret line="105" column="43" lean-forward="true" selection-start-line="105" selection-start-column="43" selection-end-line="105" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#findWordByPosition#0;class#BasicFunctions#0" />
+                <element signature="method#findPositionsOfWord#0;class#BasicFunctions#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/models/Paragraph.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#542#543#0" expanded="true" />
+                <element signature="e#577#578#0" expanded="true" />
+                <element signature="e#631#632#0" expanded="true" />
+                <element signature="e#679#680#0" expanded="true" />
+                <element signature="method#toString#0;class#Paragraph#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk-12.0.2/lib/src.zip!/java.base/java/util/Set.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="497">
+              <caret line="146" column="12" selection-start-line="146" selection-start-column="12" selection-end-line="146" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/bl/services/PositionService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="633">
+              <caret line="42" column="30" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#findByPositionDetails#0;class#PositionService#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/models/Position.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="326">
+              <caret line="79" column="21" selection-start-line="79" selection-start-column="21" selection-end-line="79" selection-end-column="21" />
+              <folding>
+                <element signature="e#1627#1628#0" expanded="true" />
+                <element signature="e#1655#1656#0" expanded="true" />
+                <element signature="method#equals#0;class#Position#0" />
+                <element signature="method#toString#0;class#Position#0" />
               </folding>
             </state>
           </provider>
@@ -152,8 +131,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -169,6 +148,15 @@
       <find>author</find>
       <find>//</find>
       <find>rating</find>
+      <find>spring</find>
+      <find>recipesforme</find>
+      <find>hibernate_sequence</find>
+      <find>paragraph_id</find>
+      <find>SEQ</find>
+      <find>title</find>
+      <find>max</find>
+      <find>levelName</find>
+      <find>throw</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -184,29 +172,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/templates/static/index.html" />
-        <option value="$PROJECT_DIR$/src/main/java/org/openu/recipesForMe/Service/Interdaces/IWordService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/openu/recipesForMe/MyController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/openu/recipesForMe/Services/IWordService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/openu/recipesForMe/Services/WordService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/openu/recipesForMe/Models/Groups_Words.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/openu/recipesForMe/Models/GroupsWords.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/openu/recipesForMe/models/GroupsWords.java" />
-        <option value="$PROJECT_DIR$/src/main/java/recipesforme/models/GroupsWords.java" />
-        <option value="$PROJECT_DIR$/src/main/java/recipesforme/models/PhrasePosition.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/scema-postgres.sql" />
-        <option value="$PROJECT_DIR$/src/main/resources/data-postgres.sql" />
-        <option value="$PROJECT_DIR$/src/main/resources/data.sql" />
-        <option value="$PROJECT_DIR$/src/main/java/recipesforme/models/WordPosition.java" />
         <option value="$PROJECT_DIR$/src/main/java/recipesforme/Repositories/WordRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/recipesforme/models/Group.java" />
-        <option value="$PROJECT_DIR$/src/main/java/recipesforme/models/Phrase.java" />
         <option value="$PROJECT_DIR$/src/main/java/recipesforme/models/Recipes.java" />
         <option value="$PROJECT_DIR$/src/main/java/recipesforme/models/Rating.java" />
-        <option value="$PROJECT_DIR$/src/main/java/recipesforme/repositories/PositionRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/recipesforme/repositories/GroupRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/recipesforme/repositories/PhraseRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/recipesforme/repositories/AuthorRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/recipesforme/bl/decomposeText.java" />
         <option value="$PROJECT_DIR$/src/main/java/recipesforme/controllers/MyController.java" />
         <option value="$PROJECT_DIR$/src/main/java/recipesforme/controllers/TextLoader.java" />
@@ -214,27 +182,47 @@
         <option value="$PROJECT_DIR$/src/main/java/recipesforme/services/FileSystemStorageService.java" />
         <option value="$PROJECT_DIR$/src/main/java/recipesforme/services/StorageProperties.java" />
         <option value="$PROJECT_DIR$/src/main/java/recipesforme/services/StorageException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/recipesforme/RecipesForMeApplication.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/uploadForm.html" />
+        <option value="$PROJECT_DIR$/src/main/java/recipesforme/repositories/RatingRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/recipesforme/services/IParagraphService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/recipesforme/services/ParagraphService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/recipesforme/RecipesForMeApplication.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/recipesforme/services/RecipeService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/recipesforme/services/AthorService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/recipesforme/services/AוthorService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/recipesforme/services/PositionService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/recipesforme/services/AuthorService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/recipesforme/services/LevelService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/recipesforme/services/WordService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/recipesforme/controllers/TextLoaderController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/recipesforme/repositories/WordRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/recipesforme/bl/services/LevelService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/recipesforme/repositories/LevelRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/recipesforme/repositories/ParagraphRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/recipesforme/bl/services/AuthorService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/recipesforme/repositories/AuthorRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/recipesforme/models/Recipe.java" />
+        <option value="$PROJECT_DIR$/src/main/java/recipesforme/models/Position.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/recipesforme/bl/services/RecipeService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/recipesforme/repositories/RecipeRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/recipesforme/repositories/PositionRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/recipesforme/bl/services/GroupService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/recipesforme/repositories/GroupRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/recipesforme/bl/services/ParagraphService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/recipesforme/models/Word.java" />
+        <option value="$PROJECT_DIR$/src/main/java/recipesforme/bl/TextParser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/recipesforme/models/Phrase.java" />
+        <option value="$PROJECT_DIR$/src/main/java/recipesforme/repositories/PhraseRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/recipesforme/bl/services/WordService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/recipesforme/bl/services/PhraseService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/recipesforme/bl/services/PositionService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/recipesforme/models/Group.java" />
         <option value="$PROJECT_DIR$/src/main/java/recipesforme/models/Author.java" />
         <option value="$PROJECT_DIR$/src/main/java/recipesforme/models/Level.java" />
-        <option value="$PROJECT_DIR$/src/main/java/recipesforme/repositories/RatingRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/recipesforme/controllers/TextLoaderController.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/recipesforme/models/Word.java" />
-        <option value="$PROJECT_DIR$/src/main/java/recipesforme/models/Position.java" />
-        <option value="$PROJECT_DIR$/src/main/java/recipesforme/models/Recipe.java" />
-        <option value="$PROJECT_DIR$/src/main/java/recipesforme/services/IParagraphService.java" />
         <option value="$PROJECT_DIR$/src/main/java/recipesforme/models/Paragraph.java" />
-        <option value="$PROJECT_DIR$/src/main/java/recipesforme/repositories/ParagraphRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/recipesforme/services/ParagraphService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/recipesforme/repositories/WordRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/recipesforme/services/WordService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/recipesforme/services/PositionService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/recipesforme/bl/TextParser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/recipesforme/repositories/LevelRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/recipesforme/repositories/RecipeRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/recipesforme/bl/BasicFunctions.java" />
       </list>
     </option>
   </component>
@@ -245,11 +233,27 @@
       </MavenImportingSettings>
     </option>
   </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="RecipesForMe" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="RecipesForMe" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2043" />
-    <option name="y" value="218" />
-    <option name="width" value="922" />
-    <option name="height" value="494" />
+    <option name="x" value="1912" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -296,6 +300,25 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="recipesforme" type="462c0819:PsiDirectoryNode" />
+              <item name="bl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="recipeRecover" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RecipeRecover" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="recipesforme" type="462c0819:PsiDirectoryNode" />
+              <item name="bl" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="recipeRecover" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RecipeRecover" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="recipesforme" type="462c0819:PsiDirectoryNode" />
               <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -312,9 +335,7 @@
               <item name="RecipeRecover" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="recipesforme" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="recipeRecover" type="b2602c69:ProjectViewProjectNode" />
@@ -322,6 +343,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -345,6 +367,7 @@
       <recent name="C:\Users\Tal Fershter\Documents\University\Workshop\RecipeRecover\src\main\java\recipesforme\services" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="recipesforme.bl.services" />
       <recent name="recipesforme.services" />
       <recent name="recipesforme.models" />
       <recent name="recipesforme.repositories" />
@@ -489,7 +512,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607807702270</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="text parser">
+      <created>1608375110316</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1608375110316</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TodoView">
@@ -505,7 +535,7 @@
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14818764" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1663113" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -514,24 +544,24 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.5135428" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.5167931" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39869988" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.23510292" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3066089" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32827735" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32502708" />
-      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.32995737" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32394367" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" />
+      <window_info anchor="right" id="Maven" order="4" weight="0.32995737" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.32995737" />
     </layout>
   </component>
   <component name="VcsManagerConfiguration">
@@ -552,16 +582,22 @@
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/recipesforme/bl/TextParser.java</url>
-          <line>39</line>
+          <url>file://$PROJECT_DIR$/src/main/java/recipesforme/controllers/TextLoaderController.java</url>
+          <line>49</line>
           <properties />
-          <option name="timeStamp" value="8" />
+          <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/recipesforme/bl/TextParser.java</url>
-          <line>151</line>
+          <line>194</line>
           <properties />
-          <option name="timeStamp" value="13" />
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/recipesforme/bl/BasicFunctions.java</url>
+          <line>38</line>
+          <properties />
+          <option name="timeStamp" value="49" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -580,73 +616,52 @@
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
       <expression>
-        <expression-string>Pattern pattern = Pattern.compile(&quot;(Yield:) (?:(\\d*) &quot; +
-        &quot;(?:(?:(?:to) ?)(\\d*)) servings)&quot;);
-Matcher matcher = pattern.matcher(&quot;Yield: 4 servings&quot;);
-matcher.matches();</expression-string>
+        <expression-string>this.get`getTargetException();</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>Pattern pattern = Pattern.compile(&quot;(Yield:) (?:(\\d*) &quot; +
-        &quot;(?:(?:(?:to) ?)(?:(\\d*))) servings)&quot;);
-Matcher matcher = pattern.matcher(&quot;Yield: 4 servings&quot;);
-matcher.matches();</expression-string>
+        <expression-string>getTargetException();</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>Pattern pattern = Pattern.compile(&quot;(Yield:) ((?:(\\d*) &quot; +
-        &quot;(?:(?:to) ?))(?:(\\d*)) servings)&quot;);
-Matcher matcher = pattern.matcher(&quot;Yield: 4 servings&quot;);
-matcher.matches();</expression-string>
+        <expression-string>var4.getTargetException();</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>Pattern pattern = Pattern.compile(&quot;(Yield:) ((?:(\\d*) (?:(?:to) ?)(?:(\\d*))) servings)&quot;);
-Matcher matcher = pattern.matcher(&quot;Yield: 4 servings&quot;);
-matcher.matches();</expression-string>
+        <expression-string>var4</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>Pattern pattern = Pattern.compile(&quot;(Yield:) ((?:(\\d*) (?:(?:to) ?)(?:(\\d*))) servings)&quot;);
-Matcher matcher = pattern.matcher(&quot;Yield: 4 to 6 servings&quot;);
-matcher.matches();</expression-string>
+        <expression-string>e</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>Pattern pattern = Pattern.compile(&quot;(Yield:) ((?:(\\d*) (?:to) ?)(?:(\\d*)) servings)&quot;);
-Matcher matcher = pattern.matcher(&quot;Yield: 4 to 6 servings&quot;);
-matcher.matches();</expression-string>
+        <expression-string>new WordService().saveAll(wordsList)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>Pattern pattern = Pattern.compile(&quot;(Yield:) ((?:(\\d*) (?:to) ?) (?:(\\d*)) servings)&quot;);
-Matcher matcher = pattern.matcher(&quot;Yield: 6 servings&quot;);
-matcher.matches();</expression-string>
+        <expression-string>new WordService().saveAll()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>Pattern pattern = Pattern.compile(&quot;(Yield:) ((?:(\\d*) (?:to) ?)(?:(\\d*)) servings)&quot;);
-Matcher matcher = pattern.matcher(&quot;Yield: 6 servings&quot;);
-matcher.matches();</expression-string>
+        <expression-string>new WordService().repository</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>Pattern pattern = Pattern.compile(&quot;(Yield:) ((?:(\\d*) (?:to) ?)(?:(\\d*)) servings)&quot;);
-        Matcher matcher = pattern.matcher(line);
-        matcher.matches();</expression-string>
+        <expression-string>new WordService()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>Time.valueOf(&quot;00:45&quot;)</expression-string>
+        <expression-string>WordService sr = new WordService();</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
@@ -732,153 +747,318 @@ matcher.matches();</expression-string>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/jakarta/persistence/jakarta.persistence-api/2.2.3/jakarta.persistence-api-2.2.3-sources.jar!/javax/persistence/JoinTable.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="96" column="7" selection-start-line="96" selection-start-column="7" selection-end-line="96" selection-end-column="7" />
+        <state relative-caret-position="198">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/models/Rating.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/models/Group.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/RecipesForMeApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
-          <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+          <caret line="22" column="39" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/models/Phrase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="65" column="28" selection-start-line="65" selection-start-column="28" selection-end-line="65" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/showWords.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/repositories/PositionRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="12" column="37" lean-forward="true" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/repositories/GroupRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/repositories/AuthorRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/dal/DBConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/repositories/PhraseRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/controllers/MyController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="7" column="51" lean-forward="true" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/services/StorageException.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/uploadForm.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/showWords.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/bl/services/.idea/modules.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/bl/services/.idea/services.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.3.1/spring-core-5.3.1.jar!/org/springframework/util/ReflectionUtils.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" selection-end-line="16" />
+        <state relative-caret-position="220">
+          <caret line="351" selection-start-line="351" selection-end-line="351" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/services/StorageFileNotFoundException.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.3.1/spring-aop-5.3.1.jar!/org/springframework/aop/support/AopUtils.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
-          <caret line="8" column="37" lean-forward="true" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+          <caret line="192" column="51" lean-forward="true" selection-start-line="192" selection-start-column="51" selection-end-line="192" selection-end-column="51" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/uploadForm.html">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.3.1/spring-aop-5.3.1.jar!/org/springframework/aop/framework/ReflectiveMethodInvocation.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+        <state relative-caret-position="115">
+          <caret line="77" selection-start-line="77" selection-end-line="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-12.0.2/lib/src.zip!/java.base/java/util/Optional.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1276">
+          <caret line="59" column="19" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.4.1/spring-data-commons-2.4.1-sources.jar!/org/springframework/data/mapping/PropertyPath.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="128" column="43" lean-forward="true" selection-start-line="128" selection-start-column="43" selection-end-line="128" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.3.1/spring-aop-5.3.1.jar!/org/springframework/aop/framework/JdkDynamicAopProxy.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-40">
+          <caret line="140" lean-forward="true" selection-start-line="140" selection-end-line="140" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-jpa/2.4.1/spring-data-jpa-2.4.1.jar!/org/springframework/data/jpa/repository/Query.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/controllers/TextLoaderController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="66" selection-start-line="66" selection-end-line="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1608815737941" expanded="true" signature="2571:2771" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.3.1/spring-web-5.3.1.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="104" selection-start-line="104" selection-end-line="104" />
+        <state relative-caret-position="175">
+          <caret line="110" selection-start-line="110" selection-end-line="110" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-12.0.2/lib/src.zip!/java.base/java/io/File.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.4.1/spring-data-commons-2.4.1-sources.jar!/org/springframework/data/repository/query/Param.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="273" column="11" selection-start-line="273" selection-start-column="11" selection-end-line="273" selection-end-column="11" />
+        <state relative-caret-position="286">
+          <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-12.0.2/lib/src.zip!/java.base/jdk/internal/reflect/NativeMethodAccessorImpl.java">
+    <entry file="jar://C:/Program Files/Java/jdk-12.0.2/lib/src.zip!/java.base/java/util/List.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="68" column="33" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
+        <state relative-caret-position="-6103">
+          <caret line="137" column="17" selection-start-line="137" selection-start-column="17" selection-end-line="137" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-12.0.2/lib/src.zip!/java.base/java/nio/file/Path.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="98" column="17" selection-start-line="98" selection-start-column="17" selection-end-line="98" selection-end-column="17" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/models/Author.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar!/org/apache/commons/collections/IteratorUtils.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+        <state relative-caret-position="299">
+          <caret line="270" column="23" selection-start-line="270" selection-start-column="23" selection-end-line="270" selection-end-column="23" />
           <folding>
-            <element signature="e#453#454#0" expanded="true" />
-            <element signature="e#499#500#0" expanded="true" />
+            <element signature="e#10269#10270#0" expanded="true" />
+            <element signature="e#10312#10313#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/RecipesForMeApplication.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/bl/services/StorageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/bl/services/StorageFileNotFoundException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/bl/services/RecipeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/repositories/RecipeRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="30" column="62" selection-start-line="30" selection-start-column="62" selection-end-line="30" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/bl/services/ParagraphService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="25" column="41" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#451#452#0" expanded="true" />
+            <element signature="e#512#513#0" expanded="true" />
+            <element signature="e#610#611#0" expanded="true" />
+            <element signature="e#666#667#0" expanded="true" />
+            <element signature="e#756#757#0" expanded="true" />
+            <element signature="e#808#809#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/repositories/PositionRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="700">
+          <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/bl/TextParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="131" column="15" lean-forward="true" selection-start-line="131" selection-start-column="15" selection-end-line="131" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/repositories/PhraseRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/repositories/ParagraphRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/repositories/GroupRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="43" lean-forward="true" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-12.0.2/lib/src.zip!/java.base/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="2371" column="20" selection-start-line="2371" selection-start-column="20" selection-end-line="2371" selection-end-column="20" />
+          <folding>
+            <element signature="e#94629#94630#0" expanded="true" />
+            <element signature="e#94667#94668#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/repositories/WordRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/bl/services/PhraseService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="32" column="99" selection-start-line="32" selection-start-column="99" selection-end-line="32" selection-end-column="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/repositories/AuthorRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="22" column="20" selection-start-line="22" selection-end-line="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/repositories/LevelRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/bl/services/AuthorService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="30" column="41" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/bl/services/FileSystemStorageService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
-          <caret line="17" column="48" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="48" />
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/bl/services/GroupService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/bl/services/LevelService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/models/Word.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1279#1280#0" expanded="true" />
+            <element signature="e#1308#1309#0" expanded="true" />
+            <element signature="e#1356#1357#0" expanded="true" />
+            <element signature="e#1392#1393#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/models/Recipe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-119">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -887,276 +1067,118 @@ matcher.matches();</expression-string>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/models/Level.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="71" column="21" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
+        <state relative-caret-position="550">
+          <caret line="40" column="6" lean-forward="true" selection-start-line="40" selection-start-column="6" selection-end-line="40" selection-end-column="6" />
           <folding>
-            <element signature="e#430#431#0" expanded="true" />
-            <element signature="e#474#475#0" expanded="true" />
-            <element signature="e#507#508#0" expanded="true" />
-            <element signature="e#538#539#0" expanded="true" />
-            <element signature="e#584#585#0" expanded="true" />
-            <element signature="e#624#625#0" expanded="true" />
+            <element signature="e#844#845#0" expanded="true" />
+            <element signature="e#874#875#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/models/Group.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="16" column="45" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
+          <folding>
+            <element signature="e#793#794#0" expanded="true" />
+            <element signature="e#821#822#0" expanded="true" />
+            <element signature="e#866#867#0" expanded="true" />
+            <element signature="e#900#901#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/models/Author.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="36" column="29" lean-forward="true" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/bl/services/StorageProperties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/bl/services/WordService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="22" column="30" lean-forward="true" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#559#560#0" expanded="true" />
+            <element signature="e#610#611#0" expanded="true" />
             <element signature="e#662#663#0" expanded="true" />
-            <element signature="e#695#696#0" expanded="true" />
-            <element signature="e#748#749#0" expanded="true" />
-            <element signature="e#792#793#0" expanded="true" />
-            <element signature="e#838#839#0" expanded="true" />
-            <element signature="e#868#869#0" expanded="true" />
-            <element signature="e#926#927#0" expanded="true" />
-            <element signature="e#964#965#0" expanded="true" />
+            <element signature="e#710#711#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/services/StorageService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/models/Phrase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="462">
+          <caret line="25" column="32" lean-forward="true" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/services/FileSystemStorageService.java">
+    <entry file="jar://C:/Program Files/Java/jdk-12.0.2/lib/src.zip!/java.base/java/util/Set.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="43" column="16" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="71" column="21" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/models/Word.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="26" column="10" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.4.1/spring-data-commons-2.4.1.jar!/org/springframework/data/repository/CrudRepository.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/controllers/TextLoaderController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1607803248285" expanded="true" signature="2255:2455" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-12.0.2/lib/src.zip!/java.sql/java/sql/Date.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="44" column="13" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/commons-validator/commons-validator/1.6/commons-validator-1.6.jar!/org/apache/commons/validator/DateValidator.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="e#489#490#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/commons-validator/commons-validator/1.6/commons-validator-1.6.jar!/org/apache/commons/validator/GenericValidator.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="60" selection-start-line="60" selection-end-line="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-12.0.2/lib/src.zip!/java.sql/java/sql/Time.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="93" column="23" selection-start-line="93" selection-start-column="23" selection-end-line="93" selection-end-column="23" />
+        <state relative-caret-position="497">
+          <caret line="146" column="12" selection-start-line="146" selection-start-column="12" selection-end-line="146" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/models/Position.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="22" column="49" selection-start-line="22" selection-start-column="49" selection-end-line="22" selection-end-column="49" />
+        <state relative-caret-position="326">
+          <caret line="79" column="21" selection-start-line="79" selection-start-column="21" selection-end-line="79" selection-end-column="21" />
           <folding>
+            <element signature="e#1627#1628#0" expanded="true" />
+            <element signature="e#1655#1656#0" expanded="true" />
             <element signature="method#equals#0;class#Position#0" />
             <element signature="method#toString#0;class#Position#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-12.0.2/lib/src.zip!/java.base/java/util/regex/Matcher.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/bl/services/PositionService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="723" column="6" lean-forward="true" selection-start-line="723" selection-start-column="6" selection-end-line="723" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-12.0.2/lib/src.zip!/java.base/java/util/List.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="649" column="8" selection-start-line="649" selection-start-column="8" selection-end-line="649" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/services/IWordService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+        <state relative-caret-position="633">
+          <caret line="42" column="30" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#findByPositionDetails#0;class#PositionService#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.4.1/spring-data-commons-2.4.1-sources.jar!/org/springframework/data/repository/Repository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="27" column="22" lean-forward="true" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/services/IParagraphService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="13" column="43" lean-forward="true" selection-start-line="13" selection-end-line="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/models/Paragraph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-175">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        <state relative-caret-position="189">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#equals#0;class#Paragraph#0" />
+            <element signature="e#542#543#0" expanded="true" />
+            <element signature="e#577#578#0" expanded="true" />
+            <element signature="e#631#632#0" expanded="true" />
+            <element signature="e#679#680#0" expanded="true" />
             <element signature="method#toString#0;class#Paragraph#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/services/StorageProperties.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/bl/BasicFunctions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-12.0.2/lib/src.zip!/java.base/java/util/stream/Stream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31">
-          <caret line="676" column="13" selection-start-line="676" selection-start-column="13" selection-end-line="676" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/services/ParagraphService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+        <state relative-caret-position="1958">
+          <caret line="105" column="43" lean-forward="true" selection-start-line="105" selection-start-column="43" selection-end-line="105" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#findWordByPosition#0;class#BasicFunctions#0" />
+            <element signature="method#findPositionsOfWord#0;class#BasicFunctions#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.4.1/spring-data-commons-2.4.1-sources.jar!/org/springframework/data/repository/CrudRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-225">
-          <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/repositories/WordRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/repositories/ParagraphRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/models/Recipe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1976">
-          <caret line="193" column="45" lean-forward="true" selection-start-line="193" selection-start-column="45" selection-end-line="193" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2721#2722#0" expanded="true" />
-            <element signature="e#2762#2763#0" expanded="true" />
-            <element signature="e#2921#2922#0" expanded="true" />
-            <element signature="e#2948#2949#0" expanded="true" />
-            <element signature="e#2986#2987#0" expanded="true" />
-            <element signature="e#3018#3019#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/services/WordService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="21" column="31" lean-forward="true" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#526#527#0" expanded="true" />
-            <element signature="e#555#556#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/services/PositionService.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/bl/TextParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="35" column="27" lean-forward="true" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#parseDate#0;class#TextParser#0" />
-            <element signature="method#setDate#0;class#TextParser#0" />
-            <element signature="method#setTime#0;class#TextParser#0" />
-            <element signature="method#setTitleDetails#0;class#TextParser#0" />
-            <element signature="method#setYields#0;class#TextParser#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/repositories/LevelRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/recipesforme/repositories/RecipeRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>

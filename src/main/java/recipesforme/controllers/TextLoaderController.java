@@ -11,8 +11,9 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import recipesforme.bl.TextParser;
-import recipesforme.services.StorageFileNotFoundException;
-import recipesforme.services.StorageService;
+import recipesforme.bl.services.StorageFileNotFoundException;
+import recipesforme.bl.services.StorageService;
+import recipesforme.bl.services.WordService;
 
 import java.io.IOException;
 import java.util.stream.Collectors;
@@ -20,12 +21,18 @@ import java.util.stream.Collectors;
 @Controller
 public class TextLoaderController {
 
-    private final StorageService storageService;
+    private StorageService storageService;
+
+    @Autowired
+    private WordService wordService;
 
     @Autowired
     public TextLoaderController(StorageService storageService){
         this.storageService = storageService;
     }
+
+    @Autowired
+    private TextParser textParser;
 
     @GetMapping("/")
     public String listUploadedFiles(Model model) throws IOException {
@@ -36,6 +43,13 @@ public class TextLoaderController {
                 .collect(Collectors.toList()));
 
         return "uploadForm";
+    }
+
+    @GetMapping("/showWords")
+    public String listWords(Model model) {
+        model.addAttribute("words", this.wordService.findAll());
+
+        return "showWords";
     }
 
     @GetMapping("/files/{filename:.+}")
@@ -50,8 +64,7 @@ public class TextLoaderController {
     @PostMapping("/")
     public String handleFileUpload(@RequestParam("file") MultipartFile file,
                                    RedirectAttributes redirectAttributes) {
-
-        new TextParser().parseRecipe(file);
+        textParser.parseRecipe(file);
         storageService.store(file);
         redirectAttributes.addFlashAttribute("message",
                 "You successfully uploaded " + file.getOriginalFilename() + "!");

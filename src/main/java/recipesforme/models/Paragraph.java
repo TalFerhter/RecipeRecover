@@ -1,23 +1,36 @@
 package recipesforme.models;
 
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
 import java.util.Objects;
+import java.util.UUID;
 
 @Entity
 @Table(name = "paragraphs")
 public class Paragraph {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private int paragraph_id;
+    private UUID paragraph_id;
 
     private String title;
 
-    public Paragraph() {}
+    public Paragraph() {
+        this.paragraph_id = UUID.randomUUID();
+        this.title = "Intro";
+    }
 
-    public Paragraph(int paragraphId, String title) {
-        this.paragraph_id = paragraphId;
+    public Paragraph(String title) {
+        this.paragraph_id = UUID.randomUUID();
         this.title = title;
+    }
+
+    public UUID getParagraph_id() {
+        return paragraph_id;
+    }
+
+    public void setParagraph_id(UUID paragraph_id) {
+        this.paragraph_id = paragraph_id;
     }
 
     public String getTitle() {

@@ -1,33 +1,32 @@
 package recipesforme.models;
 
 import javax.persistence.*;
-import java.util.Collection;
-import java.util.Objects;
+import java.util.*;
 
 @Entity
 @Table(name = "authors")
 public class Author {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private int author_id;
+    private UUID author_id;
 
     private String author_name;
 
     @OneToMany(mappedBy = "authors")
-    private Collection<Recipe> recipes;
+    private Set<Recipe> recipes = new HashSet<>();
 
     protected Author() {}
 
     public Author(String author_name) {
+        this.author_id = UUID.randomUUID();
         this.author_name = author_name;
     }
 
-    public int getAuthor_id() {
+    public UUID getAuthor_id() {
         return author_id;
     }
 
-    public void setAuthor_id(int author_id) {
+    public void setAuthor_id(UUID author_id) {
         this.author_id = author_id;
     }
 
@@ -43,7 +42,7 @@ public class Author {
         return recipes;
     }
 
-    public void setRecipes(Collection<Recipe> recipes) {
+    public void setRecipes(Set<Recipe> recipes) {
         this.recipes = recipes;
     }
 
