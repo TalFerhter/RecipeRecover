@@ -28,52 +28,52 @@ public interface RecipeRepository extends CrudRepository<Recipe, UUID> {
     @Override
     void delete(Recipe entity);
 
-    @Query(value = "select r from Recipe r where r.recipe_name = ?1")
+    @Query(value = "select r from Recipe r where r.recipeName = ?1")
     Optional<Recipe> findByRecipeName(String name);
 
-    @Query(value = "select r from Recipe r where r.author_id = ?1")
+    @Query(value = "select r from Recipe r where r.author.authorId = ?1")
     Iterable<Recipe> findByAuthor(String author);
 
-    @Query(value = "select r from Recipe r where r.site_name = ?1")
+    @Query(value = "select r from Recipe r where r.siteName = ?1")
     Iterable<Recipe> findBySite(String site);
 
-    @Query("select r from Recipe r where r.cook_time <= :time")
+    @Query("select r from Recipe r where r.cookTime <= :time")
     Iterable<Recipe> findAllWithLessCookTime(@Param("time") Time time);
 
-    @Query("select r from Recipe r where r.cook_time = :time")
+    @Query("select r from Recipe r where r.cookTime = :time")
     Iterable<Recipe> findAllWithCookTime(@Param("time") Time time);
 
-    @Query("select r from Recipe r where r.cook_time >= :time")
+    @Query("select r from Recipe r where r.cookTime >= :time")
     Iterable<Recipe> findAllWithMoreCookTime(@Param("time") Time time);
 
-    @Query("select r from Recipe r where r.prep_time <= :time")
+    @Query("select r from Recipe r where r.prepTime <= :time")
     Iterable<Recipe> findAllWithLessPrepTime(@Param("time") Time time);
 
-    @Query("select r from Recipe r where r.prep_time = :time")
+    @Query("select r from Recipe r where r.prepTime = :time")
     Iterable<Recipe> findAllWithPrepTime(@Param("time") Time time);
 
-    @Query("select r from Recipe r where r.prep_time >= :time")
+    @Query("select r from Recipe r where r.prepTime >= :time")
     Iterable<Recipe> findAllWithMorePrepTime(@Param("time") Time time);
 
-    @Query("select r from Recipe r where r.total_time <= :time")
+    @Query("select r from Recipe r where r.totalTime <= :time")
     Iterable<Recipe> findAllWithLessTotalTime(@Param("time") Time time);
 
-    @Query("select r from Recipe r where r.total_time = :time")
+    @Query("select r from Recipe r where r.totalTime = :time")
     Iterable<Recipe> findAllWithTotalTime(@Param("time") Time time);
 
-    @Query("select r from Recipe r where r.total_time >= :time")
+    @Query("select r from Recipe r where r.totalTime >= :time")
     Iterable<Recipe> findAllWithMoreTotalTime(@Param("time") Time time);
 
-    @Query("select r from Recipe r where r.yield_min <= :yield")
+    @Query("select r from Recipe r where r.yieldMin <= :yield")
     Iterable<Recipe> findAllWithLessYield(@Param("yield") int yield);
 
-    @Query("select r from Recipe r where r.yield_min = :yield")
+    @Query("select r from Recipe r where r.yieldMin = :yield")
     Iterable<Recipe> findAllWithYield(@Param("yield") int yield);
 
-    @Query("select r from Recipe r where r.yield_max >= :yield or r.yield_min >= :yield")
+    @Query("select r from Recipe r where r.yieldMax >= :yield or r.yieldMin >= :yield")
     Iterable<Recipe> findAllWithMoreYield(@Param("yield") int yield);
 
-    @Query("select r from Recipe r where r.yield_max >= :min_yield and r.yield_min <= :max_yield")
+    @Query("select r from Recipe r where r.yieldMax >= :min_yield and r.yieldMin <= :max_yield")
     Iterable<Recipe> findAllInRangeYield(@Param("min_yield") int min_yield, @Param("max_yield") int max_yield);
 
     @Query("select r from Recipe r where r.date <= :date")
@@ -82,6 +82,6 @@ public interface RecipeRepository extends CrudRepository<Recipe, UUID> {
     @Query("select r from Recipe r where r.date = :date")
     Iterable<Recipe> findAllWithCreationAtDate(@Param("date") Date date);
 
-    @Query("select r from Recipe r where r.date => :date")
+    @Query("select r from Recipe r where r.date >= :date")
     Iterable<Recipe> findAllWithCreationDateAfter(@Param("date") Date date);
 }

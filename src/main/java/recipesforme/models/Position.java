@@ -27,6 +27,10 @@ public class Position {
     @ManyToMany(mappedBy = "positions")
     private Set<Phrase> phrases = new HashSet<>();
 
+//    @OneToOne(mappedBy = "position", cascade = CascadeType.ALL)
+//    @PrimaryKeyJoinColumn
+//    private Neighbor neighbor;
+
     public Position() {}
 
     public Position(int row, int col, Recipe recipe, Paragraph currParagraph) {
@@ -100,6 +104,14 @@ public class Position {
     public void setPhrases(Set<Phrase> phrases) {
         this.phrases = phrases;
     }
+
+//    public Neighbor getNeighbor() {
+//        return neighbor;
+//    }
+//
+//    public void setNeighbor(Neighbor neighbor) {
+//        this.neighbor = neighbor;
+//    }
 
     @Override
     public boolean equals(Object obj) {

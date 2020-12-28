@@ -8,34 +8,34 @@ import java.util.*;
 public class Level {
 
     @Id
-    private UUID level_id;
+    private UUID levelId;
 
-    private String level_name;
+    private String levelName;
 
     @OneToMany(mappedBy = "levels")
     private Set<Recipe> recipes = new HashSet<>();
 
     public Level() {}
 
-    public Level(String level_name) {
-        this.level_id = UUID.randomUUID();
-        this.level_name = level_name;
+    public Level(String levelName) {
+        this.levelId = UUID.randomUUID();
+        this.levelName = levelName;
     }
 
-    public UUID getLevel_id() {
-        return level_id;
+    public UUID getLevelId() {
+        return levelId;
     }
 
-    public void setLevel_id(UUID level_id) {
-        this.level_id = level_id;
+    public void setLevelId(UUID levelId) {
+        this.levelId = levelId;
     }
 
-    public String getLevel_name() {
-        return level_name;
+    public String getLevelName() {
+        return levelName;
     }
 
-    public void setLevel_name(String level_name) {
-        this.level_name = level_name;
+    public void setLevelName(String levelName) {
+        this.levelName = levelName;
     }
 
     public Collection<Recipe> getRecipes() {
@@ -58,17 +58,17 @@ public class Level {
             return false;
         }
         final Level other = (Level) obj;
-        if (!Objects.equals(this.level_name, other.level_name)) {
+        if (!Objects.equals(this.levelName, other.levelName)) {
             return false;
         }
-        return Objects.equals(this.level_id, other.level_id);
+        return Objects.equals(this.levelId, other.levelId);
     }
 
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Author{");
-        sb.append("level_id = ").append(level_id);
-        sb.append(", name = '").append(level_name).append("'}");
+        sb.append("levelId = ").append(levelId);
+        sb.append(", name = '").append(levelName).append("'}");
         return sb.toString();
     }
 }

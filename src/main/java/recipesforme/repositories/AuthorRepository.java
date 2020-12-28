@@ -20,6 +20,6 @@ public interface AuthorRepository extends CrudRepository<Author, UUID> {
 
     <S extends Author> Iterable<S> saveAll(Iterable<S> entities);
 
-    @Query(value = "select l from Author l where l.author_name = ?1")
+    @Query(value = "select l from Author l where l.authorName = ?1")
     Optional<Author> findByAuthorName(String authorName);
 }

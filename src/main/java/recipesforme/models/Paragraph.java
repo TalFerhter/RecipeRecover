@@ -1,7 +1,5 @@
 package recipesforme.models;
 
-import org.hibernate.annotations.Cascade;
-
 import javax.persistence.*;
 import java.util.Objects;
 import java.util.UUID;
@@ -11,26 +9,26 @@ import java.util.UUID;
 public class Paragraph {
 
     @Id
-    private UUID paragraph_id;
+    private UUID paragraphId;
 
     private String title;
 
     public Paragraph() {
-        this.paragraph_id = UUID.randomUUID();
+        this.paragraphId = UUID.randomUUID();
         this.title = "Intro";
     }
 
     public Paragraph(String title) {
-        this.paragraph_id = UUID.randomUUID();
+        this.paragraphId = UUID.randomUUID();
         this.title = title;
     }
 
-    public UUID getParagraph_id() {
-        return paragraph_id;
+    public UUID getParagraphId() {
+        return paragraphId;
     }
 
-    public void setParagraph_id(UUID paragraph_id) {
-        this.paragraph_id = paragraph_id;
+    public void setParagraphId(UUID paragraphId) {
+        this.paragraphId = paragraphId;
     }
 
     public String getTitle() {
@@ -56,13 +54,13 @@ public class Paragraph {
         if (!Objects.equals(this.title, other.title)) {
             return false;
         }
-        return Objects.equals(this.paragraph_id, other.paragraph_id);
+        return Objects.equals(this.paragraphId, other.paragraphId);
     }
 
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Paragraph{");
-        sb.append("paragraph_id = ").append(paragraph_id);
+        sb.append("paragraphId = ").append(paragraphId);
         sb.append(", title = '").append(title).append("'}");
         return sb.toString();
     }

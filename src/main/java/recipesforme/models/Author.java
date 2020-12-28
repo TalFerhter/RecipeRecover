@@ -8,34 +8,34 @@ import java.util.*;
 public class Author {
 
     @Id
-    private UUID author_id;
+    private UUID authorId;
 
-    private String author_name;
+    private String authorName;
 
-    @OneToMany(mappedBy = "authors")
+    @OneToMany(mappedBy = "author")
     private Set<Recipe> recipes = new HashSet<>();
 
     protected Author() {}
 
-    public Author(String author_name) {
-        this.author_id = UUID.randomUUID();
-        this.author_name = author_name;
+    public Author(String authorName) {
+        this.authorId = UUID.randomUUID();
+        this.authorName = authorName;
     }
 
-    public UUID getAuthor_id() {
-        return author_id;
+    public UUID getAuthorId() {
+        return authorId;
     }
 
-    public void setAuthor_id(UUID author_id) {
-        this.author_id = author_id;
+    public void setAuthorId(UUID authorId) {
+        this.authorId = authorId;
     }
 
-    public String getAuthor_name() {
-        return author_name;
+    public String getAuthorName() {
+        return authorName;
     }
 
-    public void setAuthor_name(String author_name) {
-        this.author_name = author_name;
+    public void setAuthorName(String authorName) {
+        this.authorName = authorName;
     }
 
     public Collection<Recipe> getRecipes() {
@@ -58,17 +58,17 @@ public class Author {
             return false;
         }
         final Author other = (Author) obj;
-        if (!Objects.equals(this.author_name, other.author_name)) {
+        if (!Objects.equals(this.authorName, other.authorName)) {
             return false;
         }
-        return Objects.equals(this.author_id, other.author_id);
+        return Objects.equals(this.authorId, other.authorId);
     }
 
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Author{");
-        sb.append("author_id = ").append(author_id);
-        sb.append(", name = '").append(author_name).append("'}");
+        sb.append("authorId = ").append(authorId);
+        sb.append(", name = '").append(authorName).append("'}");
         return sb.toString();
     }
 }

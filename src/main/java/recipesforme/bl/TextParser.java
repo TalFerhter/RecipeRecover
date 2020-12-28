@@ -42,18 +42,18 @@ public class TextParser {
     @Autowired
     private LevelService levelService;
 
+//    @Autowired
+//    private NeighborService neighborService;
+
     // Main recipe
-    Recipe recipe;
-    List<Word> wordsList;
-    List<Position> positionList;
-    List<Paragraph> paragraphList;
+    Recipe recipe = new Recipe();
+    List<Word> wordsList = new ArrayList<>();
+    List<Position> positionList = new ArrayList<>();
+//    List<Neighbor> neighborsList = new ArrayList<>();
+    List<Paragraph> paragraphList = new ArrayList<>();
 
     public void parseRecipe(MultipartFile path) {
 
-        this.wordsList = new ArrayList<>();
-        this.positionList = new ArrayList<>();
-        this.recipe = new Recipe();
-        this.paragraphList = new ArrayList<>();
         this.paragraphList = this.paragraphService.findAll();
         Paragraph currParagraph;
         if (this.paragraphList.isEmpty()){
@@ -97,7 +97,10 @@ public class TextParser {
 
             this.wordService.saveAll(this.wordsList);
             this.positionService.saveAll(this.positionList);
+//            this.neighborService.saveAll(this.neighborsList);
             this.recipeService.save(this.recipe);
+            this.wordsList.clear();
+            this.positionList.clear();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -124,14 +127,42 @@ public class TextParser {
     public void setLineWords(String line, Paragraph paragraph, int row) {
         String[] words = Arrays.stream(line.replaceAll("\\p{Punct}", "")
                 .split("\\s")).filter(s -> !s.isEmpty()).toArray(String[]::new);
+//        Neighbor nextNeighbor = new Neighbor();
         for (int col = 0; col < words.length; col++) {
-            Word newWord = new Word(words[col]);
+            Word newWord;
+            Optional<Word> repeats = this.checkWordRepeats(words[col]);
+            if (!repeats.isEmpty()){
+                newWord = repeats.get();
+            } else {
+                newWord = new Word(words[col]);
+            }
             Position newPos = new Position(row, col+1, this.recipe, paragraph);
-            newWord.addPosition(newPos);
-            this.wordsList.add(newWord);
+//            if (nextNeighbor.getPosition() == null){
+//                nextNeighbor.setPosition(newPos);
+//
+//            } else {
+//                nextNeighbor.setNextPos(newPos.getPos_id());
+//                this.neighborsList.add(nextNeighbor);
+//                nextNeighbor = new Neighbor(newPos);
+//                nextNeighbor.setNextPos(null);
+//            }
             newPos.setWord(newWord);
+//            newPos.setNeighbor(nextNeighbor);
+            newWord.addPosition(newPos);
             this.positionList.add(newPos);
+            if (repeats.isEmpty()) {
+                this.wordsList.add(newWord);
+            }
         }
+    }
+
+    private Optional<Word> checkWordRepeats(String word) {
+        for (Word currWord : this.wordsList) {
+            if (currWord.getWord() == word){
+                return Optional.of(currWord);
+            }
+        }
+        return Optional.empty();
     }
 
     private Date parseDate(String strDate) {
@@ -192,9 +223,9 @@ public class TextParser {
     private void setAuthor(String author){
         Optional<Author> a = this.authorService.findByAuthorName(author);
         if (!a.isPresent()) {
-            this.recipe.setAuthors(this.authorService.save(new Author(author)));
+            this.recipe.setAuthor(this.authorService.save(new Author(author)));
         } else {
-            this.recipe.setAuthors(a.get());
+            this.recipe.setAuthor(a.get());
         }
     }
 

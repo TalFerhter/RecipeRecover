@@ -11,14 +11,14 @@ import java.util.UUID;
 public class Recipe {
 
     @Id
-    private UUID recipe_id;
+    private UUID recipeId;
 
-    private String recipe_name;
-    private String site_name;
+    private String recipeName;
+    private String siteName;
 
     @ManyToOne
     @JoinColumn(name = "author_id")
-    private Author authors;
+    private Author author;
 
     @ManyToOne
     @JoinColumn(name = "level_id")
@@ -35,15 +35,15 @@ public class Recipe {
     private Date date;
 
     public Recipe() {
-        this.recipe_id = UUID.randomUUID();
+        this.recipeId = UUID.randomUUID();
     }
 
-    public Recipe(String recipe_name, String site_name, Time prep_time,
+    public Recipe(String recipeName, String siteName, Time prep_time,
                   Time cook_time, Time total_time, int min_yield, int max_yield,
                   String path, Date date) {
-        this.recipe_id = UUID.randomUUID();
-        this.recipe_name = recipe_name;
-        this.site_name = site_name;
+        this.recipeId = UUID.randomUUID();
+        this.recipeName = recipeName;
+        this.siteName = siteName;
         this.prepTime = prep_time;
         this.cookTime = cook_time;
         this.totalTime = total_time;
@@ -54,35 +54,35 @@ public class Recipe {
     }
 
     public UUID getRecipeId() {
-        return recipe_id;
+        return recipeId;
     }
 
     public void setRecipeId(UUID recipe_id) {
-        this.recipe_id = recipe_id;
+        this.recipeId = recipe_id;
     }
 
     public String getRecipeName() {
-        return recipe_name;
+        return recipeName;
     }
 
     public void setRecipeName(String recipe_name) {
-        this.recipe_name = recipe_name;
+        this.recipeName = recipe_name;
     }
 
     public String getSiteName() {
-        return site_name;
+        return siteName;
     }
 
     public void setSiteName(String site_name) {
-        this.site_name = site_name;
+        this.siteName = site_name;
     }
 
-    public Author getAuthors() {
-        return authors;
+    public Author getAuthor() {
+        return author;
     }
 
-    public void setAuthors(Author authors) {
-        this.authors = authors;
+    public void setAuthor(Author author) {
+        this.author = author;
     }
 
     public Level getLevels() {
@@ -161,10 +161,10 @@ public class Recipe {
             return false;
         }
         final Recipe other = (Recipe) obj;
-        if (!Objects.equals(this.recipe_name, other.recipe_name)) {
+        if (!Objects.equals(this.recipeName, other.recipeName)) {
             return false;
         }
-        if (!Objects.equals(this.site_name, other.site_name)) {
+        if (!Objects.equals(this.siteName, other.siteName)) {
             return false;
         }
         if (this.prepTime != other.prepTime) {
@@ -185,14 +185,14 @@ public class Recipe {
         if (!Objects.equals(this.path, other.path)) {
             return false;
         }
-        return Objects.equals(this.recipe_id, other.recipe_id);
+        return Objects.equals(this.recipeId, other.recipeId);
     }
 
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Recipe{");
-        sb.append("name = '").append(recipe_name).append("'");
-        sb.append(", site = '").append(site_name).append("'");
+        sb.append("name = '").append(recipeName).append("'");
+        sb.append(", site = '").append(siteName).append("'");
         sb.append(", preparation time = ").append(prepTime);
         sb.append(", cooking time = ").append(cookTime);
         sb.append(", total time = ").append(totalTime);

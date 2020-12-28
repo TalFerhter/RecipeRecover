@@ -15,7 +15,7 @@ public interface LevelRepository extends CrudRepository<Level, UUID> {
 
     Optional<Level> findById(UUID levelId);
 
-    @Query(value = "select l from Level l where l.level_name = ?1")
+    @Query(value = "select l from Level l where l.levelName = ?1")
     Optional<Level> findByLevelName(String levelName);
 
     Iterable<Level> findAll();

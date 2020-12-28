@@ -1,16 +1,11 @@
 package recipesforme.bl;
 
-import org.apache.commons.collections.IterableMap;
-import org.apache.commons.collections.IteratorUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.util.Pair;
-import org.apache.commons.*;
 import recipesforme.bl.services.*;
 import recipesforme.models.*;
 
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 public class BasicFunctions {
 
@@ -49,7 +44,7 @@ public class BasicFunctions {
                 Set<Position> positionsAfter = new HashSet<>();
                 this.positionService.findRowAfter(curPos.getPos_id(), curPos.getRecipe().getRecipeId(),
                         curPos.getRow()).forEach(positionsAround::add);
-                Pair<Position, Set<Position>> currPair = new Pair<>(curPos, positionsAround);
+                Pair<Position, Set<Position>> currPair = Pair.of(curPos, positionsAround);
                 contextWords.add(currPair);
             });
         }
@@ -113,7 +108,7 @@ public class BasicFunctions {
         List<Position> neighbors = new ArrayList<>();
         List<Position> optionalNeighbors = new ArrayList<>();
         this.positionService.findByPositionDetails(position.getRow(), position.getCol()+1,
-                Optional.of(position.getRecipe().getRecipeId()), Optional.of(position.getParagraph().getParagraph_id()))
+                Optional.of(position.getRecipe().getRecipeId()), Optional.of(position.getParagraph().getParagraphId()))
                 .forEach(optionalNeighbors::add);
         optionalNeighbors.stream().forEach(optionalNeighbor -> {
             if (optionalNeighbor.getWords().stream().findFirst().get().getWord() == nextWord){
