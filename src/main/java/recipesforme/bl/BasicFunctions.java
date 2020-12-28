@@ -19,6 +19,9 @@ public class BasicFunctions {
     private ParagraphService paragraphService;
 
     @Autowired
+    private PhraseService phraseService;
+
+    @Autowired
     private GroupService groupService;
 
     @Autowired
@@ -30,6 +33,14 @@ public class BasicFunctions {
     @Autowired
     private LevelService levelService;
 
+    @Autowired
+    private NeighborService neighborService;
+
+    /**
+     * Find word current+next+before row
+     * @param word
+     * @return
+     */
     public Set<Pair<Position, Set<Position>>> findWordContext(String word) {
         Set<Pair<Position, Set<Position>>> contextWords = new HashSet<>();
         Optional<Word> foundedWord = wordService.findById(word);
@@ -51,6 +62,15 @@ public class BasicFunctions {
         return contextWords;
     }
 
+    /**
+     * Find the word position by the params
+     * @param row
+     * @param col
+     * @param recipe_id
+     * @param paragraph
+     * @return
+     * @throws Exception
+     */
     public Set<Word> findWordByPosition(int row, int col, Optional<UUID> recipe_id,
                                    Optional<UUID> paragraph) throws Exception {
         Set<Word> wordPositons = new HashSet<>();
@@ -65,6 +85,12 @@ public class BasicFunctions {
         return wordPositons;
     }
 
+    /**
+     * Create group with the set of words
+     * @param groupName
+     * @param words
+     * @return
+     */
     public Group createGroup(String groupName, Set<Word> words){
         Group newGroup = new Group(groupName);
         newGroup.setWords(words);
@@ -74,6 +100,12 @@ public class BasicFunctions {
         return newGroup;
     }
 
+    /**
+     * Return the position of the word
+     * @param word
+     * @return
+     * @throws Exception
+     */
     public Set<Position> findPositionsOfWord(String word) throws Exception {
         Optional<Word> originalWord = this.wordService.findById(word);
         if (!originalWord.isPresent())
@@ -81,51 +113,42 @@ public class BasicFunctions {
         return originalWord.get().getPositions();
     }
 
-    // TODO
+    /**
+     * Find the phrase accordingly to neighbors positions
+     * @param text
+     * @return
+     * @throws Exception
+     */
     public Phrase findPhrase(String text) throws Exception {
         Phrase phrase = new Phrase(text);
         String[] phraseParts = text.split(" ");
-        List<Position> neighbors = new ArrayList<>();
         Optional<Word> firstWord = this.wordService.findById(phraseParts[0]);
         if (!firstWord.isPresent() || firstWord.isEmpty()){
             throw new Exception("Phrase doesn't exists");
         }
-        List<Position> optionalNeighbors = new ArrayList<>(firstWord.get().getPositions());
-        int index = 1;
-        while (index < phraseParts.length) {
-            neighbors.clear();
-            optionalNeighbors.forEach(position -> {
-                neighbors.addAll(findPhrasePartNeighbors(position, phraseParts[index]));
-            });
-            optionalNeighbors.clear();
-            optionalNeighbors.addAll(neighbors);
+        firstWord.get().getPositions().stream().forEach(position -> {
+            List<Neighbor> firstNeighbors = this.neighborService.findNNeighbors(position.getPos_id(), phraseParts.length);
+            boolean isPhrase = true;
+            for (int i = 0; i < firstNeighbors.size() && isPhrase; i++) {
+                if (firstNeighbors.get(i).getPosition().getWords().toArray()[0] != phraseParts[i]){
+                    isPhrase = false;
+                }
+            }
+            if (isPhrase){
+                phrase.addPosition(position);
+            }
+        });
 
-        }
         return phrase;
     }
 
-    private List<Position> findPhrasePartNeighbors(Position position, String nextWord){
-        List<Position> neighbors = new ArrayList<>();
-        List<Position> optionalNeighbors = new ArrayList<>();
-        this.positionService.findByPositionDetails(position.getRow(), position.getCol()+1,
-                Optional.of(position.getRecipe().getRecipeId()), Optional.of(position.getParagraph().getParagraphId()))
-                .forEach(optionalNeighbors::add);
-        optionalNeighbors.stream().forEach(optionalNeighbor -> {
-            if (optionalNeighbor.getWords().stream().findFirst().get().getWord() == nextWord){
-                neighbors.add(optionalNeighbor);
-            }
-        });
-        return neighbors;
-    }
-
-    private List<Position> findNextOptionalWordNeighbors(Word word){
-        List<Position> optionalNeighbors = new ArrayList<>();
-        word.getPositions().forEach(position -> {
-            this.positionService.findByPositionDetails(position.getRow(), position.getCol()+1,
-                    Optional.of(position.getRecipe().getRecipeId()), Optional.empty()).forEach(optionalNeighbors::add);
-            this.positionService.findByPositionDetails(position.getRow()+1, 1,
-                    Optional.of(position.getRecipe().getRecipeId()), Optional.empty()).forEach(optionalNeighbors::add);
-        });
-        return optionalNeighbors;
+    /**
+     * Creating phrase using findPhrase
+     * @param text
+     * @return
+     * @throws Exception
+     */
+    public Phrase createPhrase(String text) throws Exception {
+        return this.phraseService.save(this.findPhrase(text));
     }
 }

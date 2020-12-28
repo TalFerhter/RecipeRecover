@@ -42,14 +42,14 @@ public class TextParser {
     @Autowired
     private LevelService levelService;
 
-//    @Autowired
-//    private NeighborService neighborService;
+    @Autowired
+    private NeighborService neighborService;
 
     // Main recipe
     Recipe recipe = new Recipe();
     List<Word> wordsList = new ArrayList<>();
     List<Position> positionList = new ArrayList<>();
-//    List<Neighbor> neighborsList = new ArrayList<>();
+    List<Neighbor> neighborsList = new ArrayList<>();
     List<Paragraph> paragraphList = new ArrayList<>();
 
     public void parseRecipe(MultipartFile path) {
@@ -97,7 +97,7 @@ public class TextParser {
 
             this.wordService.saveAll(this.wordsList);
             this.positionService.saveAll(this.positionList);
-//            this.neighborService.saveAll(this.neighborsList);
+            this.neighborService.saveAll(this.neighborsList);
             this.recipeService.save(this.recipe);
             this.wordsList.clear();
             this.positionList.clear();
@@ -127,7 +127,7 @@ public class TextParser {
     public void setLineWords(String line, Paragraph paragraph, int row) {
         String[] words = Arrays.stream(line.replaceAll("\\p{Punct}", "")
                 .split("\\s")).filter(s -> !s.isEmpty()).toArray(String[]::new);
-//        Neighbor nextNeighbor = new Neighbor();
+        Neighbor nextNeighbor = new Neighbor();
         for (int col = 0; col < words.length; col++) {
             Word newWord;
             Optional<Word> repeats = this.checkWordRepeats(words[col]);
@@ -137,17 +137,17 @@ public class TextParser {
                 newWord = new Word(words[col]);
             }
             Position newPos = new Position(row, col+1, this.recipe, paragraph);
-//            if (nextNeighbor.getPosition() == null){
-//                nextNeighbor.setPosition(newPos);
-//
-//            } else {
-//                nextNeighbor.setNextPos(newPos.getPos_id());
-//                this.neighborsList.add(nextNeighbor);
-//                nextNeighbor = new Neighbor(newPos);
-//                nextNeighbor.setNextPos(null);
-//            }
+            if (nextNeighbor.getPosition() == null){
+                nextNeighbor.setPosition(newPos);
+
+            } else {
+                nextNeighbor.setNextPos(newPos.getPos_id());
+                this.neighborsList.add(nextNeighbor);
+                nextNeighbor = new Neighbor(newPos);
+                nextNeighbor.setNextPos(null);
+            }
             newPos.setWord(newWord);
-//            newPos.setNeighbor(nextNeighbor);
+            newPos.setNeighbor(nextNeighbor);
             newWord.addPosition(newPos);
             this.positionList.add(newPos);
             if (repeats.isEmpty()) {

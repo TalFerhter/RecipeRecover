@@ -32,4 +32,8 @@ public class PhraseService {
 
     public List<Phrase> findByText(String phraseText) { return repository.findByText(phraseText); }
 
+    public <S extends Phrase> S save(S phrase) {
+        return repository.save(phrase);
+    }
+
 }

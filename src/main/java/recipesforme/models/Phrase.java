@@ -1,10 +1,7 @@
 package recipesforme.models;
 
 import javax.persistence.*;
-import java.util.List;
-import java.util.Objects;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 
 @Entity
 @Table(name = "phrases")
@@ -17,7 +14,7 @@ public class Phrase {
     @JoinTable(name = "phrases_positions",
             joinColumns = @JoinColumn(name = "phrase_id", referencedColumnName = "phrase_id"),
             inverseJoinColumns = @JoinColumn(name = "pos_id", referencedColumnName = "pos_id"))
-    private Set<Position> positions;
+    private Set<Position> positions = new HashSet<>();
 
     private String text;
 
@@ -43,6 +40,19 @@ public class Phrase {
     public void setText(String text) {
         this.text = text;
     }
+
+    public Set<Position> getPositions() {
+        return positions;
+    }
+
+    public void setPositions(Set<Position> positions) {
+        this.positions = positions;
+    }
+
+    public void addPosition(Position position){
+        this.positions.add(position);
+    }
+
 
     @Override
     public boolean equals(Object obj) {
