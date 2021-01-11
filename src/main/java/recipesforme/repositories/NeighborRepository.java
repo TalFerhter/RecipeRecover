@@ -20,28 +20,18 @@ public interface NeighborRepository extends CrudRepository<Neighbor, UUID> {
 
     <S extends Neighbor> Iterable<S> saveAll(Iterable<S> entities);
 
-    @Query(value = "select n from Neighbor n where n.nextPos = ?1")
-    Optional<Neighbor> findByNextPos(UUID nextPos);
+    void deleteAll(Iterable<? extends Neighbor> entities);
 
-    @Query(value = "WITH RECURSIVE subordinates AS (\n" +
-            "\tSELECT\n" +
-            "\t\tpos_id,\n" +
-            "\t\tnext_pos\n" +
-            "\tFROM\n" +
-            "\t\trecipesforme.neighbor_position\n" +
-            "\tWHERE\n" +
-            "\t\tpos_id = ?1\n" +
-            "\tUNION\n" +
-            "\t\tSELECT\n" +
-            "\t\t\te.pos_id,\n" +
-            "\t\t\te.next_pos\n" +
-            "\t\tFROM\n" +
-            "\t\t\trecipesforme.neighbor_position e\n" +
-            "\t\tINNER JOIN subordinates s ON s.next_pos = e.pos_id\n" +
-            "\t\n" +
-            ") SELECT\n" +
-            "\t*\n" +
-            "FROM\n" +
-            "\tsubordinates limit ?2;", nativeQuery = true)
+    @Query(value = "select n from Neighbor n where n.neighbor_pos = ?1")
+    Optional<Neighbor> findByNeighborPos(UUID nextPos);
+
+    @Query(value = "WITH RECURSIVE subordinates AS ( SELECT pos_id, neighbor_pos " +
+            "FROM recipesforme.neighbor_position " +
+            "WHERE pos_id = (?1) " +
+            "UNION " +
+            "SELECT e.pos_id, e.neighbor_pos " +
+            "FROM recipesforme.neighbor_position AS e " +
+            "INNER JOIN subordinates AS s ON s.neighbor_pos = e.pos_id ) " +
+            "SELECT * FROM subordinates limit ?2", nativeQuery = true)
     List<Neighbor> findNNeighbors(UUID posId, int n);
 }

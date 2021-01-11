@@ -1,6 +1,8 @@
 package recipesforme.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.List;
@@ -14,16 +16,13 @@ public class Word {
     @Id
     private String word;
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "words_positions",
-        joinColumns = @JoinColumn(name = "word", referencedColumnName = "word"),
-        inverseJoinColumns = @JoinColumn(name = "pos_id", referencedColumnName = "pos_id"))
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "words")
     private Set<Position> positions =  new HashSet<>();
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "groups_words",
             joinColumns = @JoinColumn(name = "word", referencedColumnName = "word"),
-            inverseJoinColumns = @JoinColumn(name = "group_id", referencedColumnName = "group_id"))
+            inverseJoinColumns = @JoinColumn(name = "group_name", referencedColumnName = "group_name"))
     private Set<Group> groups;
 
     public Word() {}
@@ -64,19 +63,4 @@ public class Word {
         this.groups.add(group);
     }
 
-    // Do I need this?
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Word other = (Word) obj;
-        return Objects.equals(this.word, other.word);
-    }
 }

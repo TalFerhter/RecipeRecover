@@ -1,5 +1,8 @@
 package recipesforme.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.util.*;
 
@@ -8,17 +11,16 @@ import java.util.*;
 public class Phrase {
 
     @Id
+    @Type(type="pg-uuid")
     private UUID phrase_id;
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "phrases_positions",
-            joinColumns = @JoinColumn(name = "phrase_id", referencedColumnName = "phrase_id"),
-            inverseJoinColumns = @JoinColumn(name = "pos_id", referencedColumnName = "pos_id"))
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "phrases")
+    @JsonIgnore
     private Set<Position> positions = new HashSet<>();
 
     private String text;
 
-    protected Phrase() {}
+    public Phrase() {}
 
     public Phrase(String text) {
         this.phrase_id = UUID.randomUUID();
@@ -51,25 +53,6 @@ public class Phrase {
 
     public void addPosition(Position position){
         this.positions.add(position);
-    }
-
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Phrase other = (Phrase) obj;
-        if (!Objects.equals(this.text, other.text)) {
-            return false;
-        }
-        return Objects.equals(this.phrase_id, other.phrase_id);
     }
 
     @Override

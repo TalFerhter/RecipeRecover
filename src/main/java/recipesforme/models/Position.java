@@ -1,5 +1,8 @@
 package recipesforme.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.util.*;
 
@@ -8,30 +11,39 @@ import java.util.*;
 public class Position {
 
     @Id
+    @Type(type="pg-uuid")
     private UUID pos_id;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "recipe_id")
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "recipeId")
     private Recipe recipe;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "paragraph_id")
+    @JsonIgnore
     private Paragraph paragraph;
 
     private int row;
     private int col;
 
-    @ManyToMany(mappedBy = "positions", fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name = "words_positions",
+            joinColumns = @JoinColumn(name = "pos_id", referencedColumnName = "pos_id"),
+            inverseJoinColumns = @JoinColumn(name = "word", referencedColumnName = "word"))
+    @JsonIgnore
     private Set<Word> words = new HashSet<>();
 
-    @ManyToMany(mappedBy = "positions")
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name = "phrases_positions",
+            joinColumns = @JoinColumn(name = "pos_id", referencedColumnName = "pos_id"),
+            inverseJoinColumns = @JoinColumn(name = "phrase_id", referencedColumnName = "phrase_id"))
     private Set<Phrase> phrases = new HashSet<>();
 
-    @OneToOne(mappedBy = "position", cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
+    @JsonIgnore
+    @JoinColumn(name = "currPos")
     private Neighbor neighbor;
-
-
 
     public Position() {}
 
@@ -113,30 +125,6 @@ public class Position {
 
     public void setNeighbor(Neighbor neighbor) {
         this.neighbor = neighbor;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Position other = (Position) obj;
-        if (!Objects.equals(this.paragraph, other.paragraph)) {
-            return false;
-        }
-        if (this.row != other.row) {
-            return false;
-        }
-        if (this.col != other.col) {
-            return false;
-        }
-        return Objects.equals(this.pos_id, other.pos_id);
     }
 
     @Override

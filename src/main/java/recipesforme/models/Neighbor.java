@@ -1,5 +1,7 @@
 package recipesforme.models;
 
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.util.UUID;
 
@@ -8,50 +10,47 @@ import java.util.UUID;
 public class Neighbor {
 
     @Id
-    @Column(name = "pos_id")
-    private UUID currPos;
+    @Type(type="pg-uuid")
+    private UUID pos_id;
 
-    private UUID nextPos;
+    @Type(type="pg-uuid")
+    private UUID neighbor_pos;
 
-    @OneToOne
-    @MapsId
-    @JoinColumn(name = "pos_id")
+    @OneToOne(mappedBy = "neighbor", fetch = FetchType.EAGER)
     private Position position;
 
     public Neighbor(){}
 
-    public Neighbor(UUID currPos) {
-        this.currPos = currPos;
+    public Neighbor(UUID pos_id) {
+        this.pos_id = pos_id;
     }
 
     public Neighbor(Position position) {
         this.position = position;
-        this.currPos = position.getPos_id();
+        this.pos_id = position.getPos_id();
     }
 
     public UUID getCurrPos() {
-        return currPos;
+        return pos_id;
     }
 
-    public void setCurrPos(UUID currPos) {
-        this.currPos = currPos;
+    public void setCurrPos(UUID pos_id) {
+        this.pos_id = pos_id;
     }
 
-    public UUID getNextPos() {
-        return nextPos;
+    public UUID getNeighborPos() {
+        return neighbor_pos;
     }
 
-    public void setNextPos(UUID nextPos) {
-        this.nextPos = nextPos;
+    public void setNeighborPos(UUID neighborPos) {
+        this.neighbor_pos = neighborPos;
     }
 
     public Position getPosition() {
         return position;
     }
 
-
     public void setPosition(Position position) {
         this.position = position;
-        this.currPos = position.getPos_id();
     }
 }

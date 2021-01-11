@@ -1,5 +1,7 @@
 package recipesforme.models;
 
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.util.*;
 
@@ -8,11 +10,12 @@ import java.util.*;
 public class Level {
 
     @Id
+    @Type(type="pg-uuid")
     private UUID levelId;
 
     private String levelName;
 
-    @OneToMany(mappedBy = "levels")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "levels")
     private Set<Recipe> recipes = new HashSet<>();
 
     public Level() {}
@@ -47,26 +50,8 @@ public class Level {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Level other = (Level) obj;
-        if (!Objects.equals(this.levelName, other.levelName)) {
-            return false;
-        }
-        return Objects.equals(this.levelId, other.levelId);
-    }
-
-    @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Author{");
+        final StringBuilder sb = new StringBuilder("Level{");
         sb.append("levelId = ").append(levelId);
         sb.append(", name = '").append(levelName).append("'}");
         return sb.toString();

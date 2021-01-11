@@ -1,9 +1,13 @@
 package recipesforme.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.sql.Time;
 import java.util.Objects;
+import java.util.Set;
 import java.util.UUID;
 
 @Entity
@@ -11,18 +15,25 @@ import java.util.UUID;
 public class Recipe {
 
     @Id
+    @Type(type="pg-uuid")
     private UUID recipeId;
 
     private String recipeName;
     private String siteName;
 
-    @ManyToOne
-    @JoinColumn(name = "author_id")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "authorId")
+    @JsonIgnore
     private Author author;
 
-    @ManyToOne
-    @JoinColumn(name = "level_id")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "levelId")
+    @JsonIgnore
     private Level levels;
+
+    @OneToMany(mappedBy = "recipe", fetch = FetchType.EAGER)
+    @JsonIgnore
+    private Set<Position> positions;
 
     private Time prepTime;
     private Time cookTime;
@@ -30,6 +41,7 @@ public class Recipe {
     private int yieldMin;
     private int yieldMax;
     private String path;
+    private String category;
 
     @Temporal(TemporalType.DATE)
     private Date date;
@@ -40,7 +52,7 @@ public class Recipe {
 
     public Recipe(String recipeName, String siteName, Time prep_time,
                   Time cook_time, Time total_time, int min_yield, int max_yield,
-                  String path, Date date) {
+                  String path, Date date, String category, Set<Position> positions) {
         this.recipeId = UUID.randomUUID();
         this.recipeName = recipeName;
         this.siteName = siteName;
@@ -51,6 +63,8 @@ public class Recipe {
         this.yieldMax = max_yield;
         this.path = path;
         this.date = date;
+        this.category = category;
+        this.positions = positions;
     }
 
     public UUID getRecipeId() {
@@ -149,46 +163,43 @@ public class Recipe {
         this.date = date;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Recipe other = (Recipe) obj;
-        if (!Objects.equals(this.recipeName, other.recipeName)) {
-            return false;
-        }
-        if (!Objects.equals(this.siteName, other.siteName)) {
-            return false;
-        }
-        if (this.prepTime != other.prepTime) {
-            return false;
-        }
-        if (this.cookTime != other.cookTime) {
-            return false;
-        }
-        if (this.totalTime != other.totalTime) {
-            return false;
-        }
-        if (this.yieldMin != other.yieldMin) {
-            return false;
-        }
-        if (this.yieldMax != other.yieldMax) {
-            return false;
-        }
-        if (!Objects.equals(this.path, other.path)) {
-            return false;
-        }
-        return Objects.equals(this.recipeId, other.recipeId);
+    public int getYieldMin() {
+        return yieldMin;
     }
 
-    @Override
+    public void setYieldMin(int yieldMin) {
+        this.yieldMin = yieldMin;
+    }
+
+    public int getYieldMax() {
+        return yieldMax;
+    }
+
+    public void setYieldMax(int yieldMax) {
+        this.yieldMax = yieldMax;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public Set<Position> getPositions() {
+        return positions;
+    }
+
+    public void setPositions(Set<Position> positions) {
+        this.positions = positions;
+    }
+
+    public void addPosition(Position position) {
+        this.positions.add(position);
+    }
+
+        @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Recipe{");
         sb.append("name = '").append(recipeName).append("'");
@@ -198,6 +209,7 @@ public class Recipe {
         sb.append(", total time = ").append(totalTime);
         sb.append(", yields = ").append(yieldMin).append(" to ").append(yieldMax);
         sb.append(", level = ").append(levels);
+        sb.append(", category = ").append(category);
         sb.append(", path = '").append(path);
         sb.append(", publish date = '").append(date).append("}");
         return sb.toString();

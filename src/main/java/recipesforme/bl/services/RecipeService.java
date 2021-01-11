@@ -2,6 +2,8 @@ package recipesforme.bl.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 import recipesforme.models.Recipe;
 import recipesforme.repositories.RecipeRepository;
 
@@ -10,6 +12,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Service
+@RestController
 public class RecipeService {
 
     @Autowired
@@ -40,5 +43,9 @@ public class RecipeService {
         Optional<Recipe> recipe = repository.findByRecipeName(name);
         return recipe;
     }
-}
 
+    public List<Recipe> findByPartOfRecipeName(String name) {
+        List<Recipe> recipe = repository.findByPartOfRecipeName(name);
+        return recipe;
+    }
+}

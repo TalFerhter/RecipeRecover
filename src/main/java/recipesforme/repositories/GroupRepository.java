@@ -9,15 +9,13 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Repository
-public interface GroupRepository extends CrudRepository<Group, UUID> {
+public interface GroupRepository extends CrudRepository<Group, String> {
 
-    Optional<Group> findById(UUID groupId);
+    Optional<Group> findById(String groupName);
 
     Iterable<Group> findAll();
 
     <S extends Group> S save(S entity);
 
     <S extends Group> Iterable<S> saveAll(Iterable<S> entities);
-
-    List<Group> findByTitle(String title);
 }

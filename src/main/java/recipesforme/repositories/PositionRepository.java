@@ -17,8 +17,7 @@ public interface PositionRepository extends CrudRepository<Position, UUID> {
 
     <S extends Position> Iterable<S> saveAll(Iterable<S> entities);
 
-    @Query(value = "select p from Position p where (p.pos_id = ?1) and (p.recipe.recipeId = ?2) and (p.row = ?3)")
-    Iterable<Position> findRow(UUID posId, UUID recipeId, int row);
+    void deleteAll(Iterable<? extends Position> entities);
 
     @Query(value = "select p from Position p where p.row = ?1 and p.col = ?2")
     Iterable<Position> findWordPositions(int row, int col);

@@ -1,5 +1,7 @@
 package recipesforme.models;
 
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.util.*;
 
@@ -8,11 +10,12 @@ import java.util.*;
 public class Author {
 
     @Id
+    @Type(type="pg-uuid")
     private UUID authorId;
 
     private String authorName;
 
-    @OneToMany(mappedBy = "author")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "author")
     private Set<Recipe> recipes = new HashSet<>();
 
     protected Author() {}
@@ -44,24 +47,6 @@ public class Author {
 
     public void setRecipes(Set<Recipe> recipes) {
         this.recipes = recipes;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Author other = (Author) obj;
-        if (!Objects.equals(this.authorName, other.authorName)) {
-            return false;
-        }
-        return Objects.equals(this.authorId, other.authorId);
     }
 
     @Override

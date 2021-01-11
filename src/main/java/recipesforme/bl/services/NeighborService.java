@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import recipesforme.models.Level;
 import recipesforme.models.Neighbor;
+import recipesforme.models.Word;
 import recipesforme.repositories.LevelRepository;
 import recipesforme.repositories.NeighborRepository;
 
@@ -26,15 +27,20 @@ public class NeighborService {
         return repository.saveAll(entities);
     }
 
-    public <S extends Neighbor> S save(S s) { return repository.save(s);}
+    public <S extends Neighbor> S save(S s) {
+        return repository.save(s);
+    }
 
+    public void deleteAll(Iterable<? extends Neighbor> entities) {
+        this.repository.deleteAll(entities);
+    }
 
-    public Optional<Neighbor> findByNextPos(UUID nextPos) {
-        Optional<Neighbor> neighbor = repository.findByNextPos(nextPos);
+    public Optional<Neighbor> findByNeighborPos(UUID nextPos) {
+        Optional<Neighbor> neighbor = repository.findByNeighborPos(nextPos);
         return neighbor;
     }
 
-    public List<Neighbor> findNNeighbors(UUID posId, int n){
+    public List<Neighbor> findNNeighbors(UUID posId, int n) {
         return repository.findNNeighbors(posId, n);
     }
 }

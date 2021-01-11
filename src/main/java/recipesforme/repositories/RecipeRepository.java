@@ -9,6 +9,7 @@ import recipesforme.models.Recipe;
 
 import java.sql.Date;
 import java.sql.Time;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -30,6 +31,9 @@ public interface RecipeRepository extends CrudRepository<Recipe, UUID> {
 
     @Query(value = "select r from Recipe r where r.recipeName = ?1")
     Optional<Recipe> findByRecipeName(String name);
+
+    @Query(value = "select * from recipesforme.recipes where recipes.recipe_name like '%' || (:name) || '%'", nativeQuery = true)
+    List<Recipe> findByPartOfRecipeName(@Param("name") String name);
 
     @Query(value = "select r from Recipe r where r.author.authorId = ?1")
     Iterable<Recipe> findByAuthor(String author);

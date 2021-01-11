@@ -1,7 +1,11 @@
 package recipesforme.models;
 
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 import java.util.UUID;
 
 @Entity
@@ -9,13 +13,18 @@ import java.util.UUID;
 public class Paragraph {
 
     @Id
+    @Column(name = "paragraph_id")
+    @Type(type="pg-uuid")
     private UUID paragraphId;
 
     private String title;
 
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "paragraph")
+    private Set<Position> positions = new HashSet<>();
+
     public Paragraph() {
         this.paragraphId = UUID.randomUUID();
-        this.title = "Intro";
+        this.title = "General";
     }
 
     public Paragraph(String title) {
@@ -39,22 +48,16 @@ public class Paragraph {
         this.title = title;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Paragraph other = (Paragraph) obj;
-        if (!Objects.equals(this.title, other.title)) {
-            return false;
-        }
-        return Objects.equals(this.paragraphId, other.paragraphId);
+    public Set<Position> getPositions() {
+        return positions;
+    }
+
+    public void setPositions(Set<Position> positions) {
+        this.positions = positions;
+    }
+
+    public void addPositions(Position position) {
+        this.positions.add(position);
     }
 
     @Override

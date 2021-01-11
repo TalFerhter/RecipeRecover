@@ -1,5 +1,6 @@
 package recipesforme.bl.services;
 
+import recipesforme.models.Recipe;
 import recipesforme.models.Word;
 import recipesforme.repositories.WordRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,12 +20,38 @@ public class WordService {
         return words;
     }
 
+    public List<Word> findAll(List<String> searchWords) {
+        var words = (List<Word>) repository.findAll(searchWords);
+        return words;
+    }
+
+    public List<Word> findAllWithoutGroup() {
+        var words = (List<Word>) repository.findAllWithoutGroup();
+        return words;
+    }
+
+    public List<Word> findAllWithGroup(String groupName) {
+        var words = (List<Word>) repository.findAllWithGroup(groupName);
+        return words;
+    }
+
     public <S extends Word> Iterable<S> saveAll(Iterable<S> entities) {
         return repository.saveAll(entities);
     }
 
-
     public Optional<Word> findById(String word) {
         return repository.findById(word);
+    }
+
+    public void deleteAll(Iterable<? extends Word> entities) {
+        this.repository.deleteAll(entities);
+    }
+
+    public List<Recipe> findAllWithRecipe(List<String> words, String recipeName) {
+        return this.repository.findAllWithRecipe(words, recipeName);
+    }
+
+    public List<Recipe> findAllRecipes(List<String> words) {
+        return this.repository.findAllRecipes(words);
     }
 }

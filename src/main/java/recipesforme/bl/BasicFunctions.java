@@ -2,11 +2,13 @@ package recipesforme.bl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.util.Pair;
+import org.springframework.stereotype.Component;
 import recipesforme.bl.services.*;
 import recipesforme.models.*;
 
 import java.util.*;
 
+@Component
 public class BasicFunctions {
 
     @Autowired
@@ -36,12 +38,14 @@ public class BasicFunctions {
     @Autowired
     private NeighborService neighborService;
 
+    public BasicFunctions() {}
+
     /**
      * Find word current+next+before row
      * @param word
      * @return
      */
-    public Set<Pair<Position, Set<Position>>> findWordContext(String word) {
+    /*public Set<Pair<Position, Set<Position>>> findWordContext(String word) {
         Set<Pair<Position, Set<Position>>> contextWords = new HashSet<>();
         Optional<Word> foundedWord = wordService.findById(word);
         if (foundedWord.isPresent()) {
@@ -60,7 +64,7 @@ public class BasicFunctions {
             });
         }
         return contextWords;
-    }
+    }*/
 
     /**
      * Find the word position by the params
@@ -130,7 +134,8 @@ public class BasicFunctions {
             List<Neighbor> firstNeighbors = this.neighborService.findNNeighbors(position.getPos_id(), phraseParts.length);
             boolean isPhrase = true;
             for (int i = 0; i < firstNeighbors.size() && isPhrase; i++) {
-                if (firstNeighbors.get(i).getPosition().getWords().toArray()[0] != phraseParts[i]){
+                Word currWord = (Word)firstNeighbors.get(i).getPosition().getWords().toArray()[0];
+                if (!currWord.getWord().equals(phraseParts[i])){
                     isPhrase = false;
                 }
             }

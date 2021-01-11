@@ -3,6 +3,7 @@ package recipesforme.bl.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import recipesforme.models.Position;
+import recipesforme.models.Word;
 import recipesforme.repositories.PositionRepository;
 
 import java.util.List;
@@ -24,20 +25,12 @@ public class PositionService {
         return repository.saveAll(entities);
     }
 
+    public void deleteAll(Iterable<? extends Position> entities) {
+        this.repository.deleteAll(entities);
+    }
+
     public Optional<Position> findById(UUID posId){
         return repository.findById(posId);
-    }
-
-    public Iterable<Position> findRowAfter(UUID posId, UUID recipeId, int row){
-        return repository.findRow(posId, recipeId, row+1);
-    }
-
-    public Iterable<Position> findRow(UUID posId, UUID recipeId, int row){
-        return repository.findRow(posId, recipeId, row);
-    }
-
-    public Iterable<Position> findRowBefore(UUID posId, UUID recipeId, int row){
-        return repository.findRow(posId, recipeId, row-1);
     }
 
     public Iterable<Position> findByPositionDetails(int row, int col, Optional<UUID> recipe_id,
@@ -54,6 +47,4 @@ public class PositionService {
         }
         return repository.findWordPositions(row, col);
     }
-
-
 }
