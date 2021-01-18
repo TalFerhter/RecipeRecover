@@ -187,6 +187,10 @@ public class TextParser {
             }
             //this.recipe.setPositions(Set.copyOf(this.positionList));
             this.saveAll();
+            if (category.isEmpty() || category.get().equals("null")){
+                this.recipe.setCategory(this.recipeService.countWordsInGroupsOfRecipe(this.recipe.getRecipeName()));
+                this.recipeService.save(this.recipe);
+            }
         } catch (IOException e) {
             e.printStackTrace();
             return false;
@@ -256,6 +260,9 @@ public class TextParser {
     }
 
     private Paragraph isParagraph(String line) {
+        if (line.equals("Related Pages")){
+            return this.paragraphList.get(0);
+        }
         int index = this.paragraphList.indexOf(line.split(":")[0]);
         return ((index >= 0) ? this.paragraphList.get(index) : null);
     }
@@ -265,11 +272,11 @@ public class TextParser {
                 .split("\\s")).filter(s -> !s.isEmpty()).toArray(String[]::new);
         for (int col = 0; col < words.length; col++) {
             Word newWord;
-            Optional<Word> repeats = this.checkWordRepeats(words[col]);
+            Optional<Word> repeats = this.checkWordRepeats(words[col].toLowerCase());
             if (!repeats.isEmpty()) {
                 newWord = repeats.get();
             } else {
-                newWord = new Word(words[col]);
+                newWord = new Word(words[col].toLowerCase());
             }
             Position newPos = new Position(row, col + 1, this.recipe, paragraph);
             if (nextNeighbor.getCurrPos() == null) {

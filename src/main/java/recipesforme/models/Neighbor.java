@@ -1,5 +1,6 @@
 package recipesforme.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
@@ -16,7 +17,8 @@ public class Neighbor {
     @Type(type="pg-uuid")
     private UUID neighbor_pos;
 
-    @OneToOne(mappedBy = "neighbor", fetch = FetchType.EAGER)
+    @OneToOne(mappedBy = "neighbor", fetch = FetchType.LAZY)
+    @JsonIgnore
     private Position position;
 
     public Neighbor(){}

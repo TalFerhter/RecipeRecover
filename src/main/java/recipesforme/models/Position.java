@@ -20,7 +20,6 @@ public class Position {
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "paragraph_id")
-    @JsonIgnore
     private Paragraph paragraph;
 
     private int row;
@@ -33,13 +32,14 @@ public class Position {
     @JsonIgnore
     private Set<Word> words = new HashSet<>();
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(name = "phrases_positions",
             joinColumns = @JoinColumn(name = "pos_id", referencedColumnName = "pos_id"),
             inverseJoinColumns = @JoinColumn(name = "phrase_id", referencedColumnName = "phrase_id"))
+    @JsonIgnore
     private Set<Phrase> phrases = new HashSet<>();
 
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
     @JsonIgnore
     @JoinColumn(name = "currPos")

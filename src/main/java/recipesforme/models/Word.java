@@ -16,13 +16,11 @@ public class Word {
     @Id
     private String word;
 
-    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "words")
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "words")
     private Set<Position> positions =  new HashSet<>();
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "groups_words",
-            joinColumns = @JoinColumn(name = "word", referencedColumnName = "word"),
-            inverseJoinColumns = @JoinColumn(name = "group_name", referencedColumnName = "group_name"))
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "words")
+    @JsonIgnore
     private Set<Group> groups;
 
     public Word() {}

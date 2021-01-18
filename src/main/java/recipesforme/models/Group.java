@@ -13,8 +13,10 @@ public class Group {
     @Id
     private String group_name;
 
-    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "groups")
-    @JsonIgnore
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinTable(name = "groups_words",
+            joinColumns = @JoinColumn(name = "group_name", referencedColumnName = "group_name"),
+            inverseJoinColumns = @JoinColumn(name = "word", referencedColumnName = "word"))
     private Set<Word> words = new HashSet<>();
 
     protected Group() {}

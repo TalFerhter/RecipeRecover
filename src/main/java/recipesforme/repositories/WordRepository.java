@@ -62,4 +62,32 @@ public interface WordRepository extends CrudRepository<Word, String> {
                 ")"
             , nativeQuery = true)
     List<Recipe> findAllRecipes(@Param("wordList")List<String> words);
+
+    @Query(value = "WITH recipe_details AS " +
+                        "(SELECT r.recipe_id, r.category, r.recipe_name " +
+                            "FROM recipesforme.recipes AS r " +
+                            "WHERE r.recipe_name=(:recipe)), " +
+                        "recipe_positions AS " +
+                        "(SELECT rp.pos_id, rd.category, rd.recipe_name " +
+                        "FROM recipesforme.positions AS rp " +
+                        "INNER JOIN recipe_details AS rd ON rp.recipe_id = rd.recipe_id), " +
+                        "recipe_words AS " +
+                        "(SELECT DISTINCT wp.word, rp.category, rp.recipe_name " +
+                        "FROM recipesforme.words_positions AS wp " +
+                        "INNER JOIN recipe_positions AS rp ON wp.pos_id = rp.pos_id) " +
+                    "SELECT group_name, count(gw.word), rw.category, rw.recipe_name " +
+                    "FROM recipesforme.groups_words AS gw " +
+                    "INNER JOIN recipe_words as rw ON gw.word = rw.word " +
+                    "GROUP BY group_name, rw.category, rw.recipe_name ",
+            nativeQuery = true)
+    List<Object[]> countWordsInGroupsOfRecipe(@Param("recipe")String recipe);
+
+    @Query (value = "SELECT AVG(CHAR_LENGTH(word)) avg_length from recipesforme.words;", nativeQuery = true)
+    Double averageWordLength();
+
+    @Query (value = "SELECT MAX(CHAR_LENGTH(word)) max_length from recipesforme.words;", nativeQuery = true)
+    Double maxWordLength();
+
+    @Query (value = "SELECT COUNT(word) countWords from recipesforme.words;", nativeQuery = true)
+    Double countWords();
 }

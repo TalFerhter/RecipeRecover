@@ -11,13 +11,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-@RestController
 public class LevelService {
 
     @Autowired
     private LevelRepository repository;
 
-    @GetMapping("/levels")
     public List<Level> findAll() {
         var levels = (List<Level>) repository.findAll();
         return levels;

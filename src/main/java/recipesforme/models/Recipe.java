@@ -21,17 +21,17 @@ public class Recipe {
     private String recipeName;
     private String siteName;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "authorId")
     @JsonIgnore
     private Author author;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "levelId")
     @JsonIgnore
     private Level levels;
 
-    @OneToMany(mappedBy = "recipe", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "recipe", fetch = FetchType.LAZY)
     @JsonIgnore
     private Set<Position> positions;
 

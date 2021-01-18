@@ -13,13 +13,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-@RestController
 public class CategoryService {
 
     @Autowired
     private CategoryRepository repository;
 
-    @GetMapping("/categories")
     public List<Category> findAll() {
         var categories = (List<Category>) repository.findAll();
         return categories;

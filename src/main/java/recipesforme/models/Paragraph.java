@@ -1,5 +1,6 @@
 package recipesforme.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
@@ -19,7 +20,8 @@ public class Paragraph {
 
     private String title;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "paragraph")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "paragraph")
+    @JsonIgnore
     private Set<Position> positions = new HashSet<>();
 
     public Paragraph() {

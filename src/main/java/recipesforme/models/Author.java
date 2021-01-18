@@ -15,7 +15,7 @@ public class Author {
 
     private String authorName;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "author")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "author")
     private Set<Recipe> recipes = new HashSet<>();
 
     protected Author() {}

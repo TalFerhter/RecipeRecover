@@ -18,6 +18,7 @@ public interface LevelRepository extends CrudRepository<Level, UUID> {
     @Query(value = "select l from Level l where l.levelName = ?1")
     Optional<Level> findByLevelName(String levelName);
 
+    @Query(value = "select * from recipesforme.levels", nativeQuery = true)
     Iterable<Level> findAll();
 
     <S extends Level> S save(S entity);

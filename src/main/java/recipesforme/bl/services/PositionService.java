@@ -1,6 +1,7 @@
 package recipesforme.bl.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 import recipesforme.models.Position;
 import recipesforme.models.Word;
@@ -46,5 +47,29 @@ public class PositionService {
             return repository.findWordPositions(row, col, paragraph_id.get());
         }
         return repository.findWordPositions(row, col);
+    }
+
+    public Iterable<String> findRecipeText(String recipe_id){
+        return repository.findRecipeText(recipe_id);
+    }
+
+    public Double averageRowLength(){
+        return this.repository.averageRowLength();
+    }
+
+    public Double averageColLength(){
+        return this.repository.averageColLength();
+    }
+
+    public Double maxRowLength(){
+        return this.repository.maxRowLength();
+    }
+
+    public Double maxColLength(){
+        return this.repository.maxColLength();
+    }
+
+    public Double countPositions(){
+        return this.repository.countPositions();
     }
 }

@@ -1,5 +1,6 @@
 package recipesforme.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
@@ -15,7 +16,8 @@ public class Level {
 
     private String levelName;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "levels")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "levels")
+    @JsonIgnore
     private Set<Recipe> recipes = new HashSet<>();
 
     public Level() {}

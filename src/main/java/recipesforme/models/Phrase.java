@@ -15,7 +15,6 @@ public class Phrase {
     private UUID phrase_id;
 
     @ManyToMany(fetch = FetchType.EAGER, mappedBy = "phrases")
-    @JsonIgnore
     private Set<Position> positions = new HashSet<>();
 
     private String text;

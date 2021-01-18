@@ -4,24 +4,12 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="675e427e-d7f1-4565-a375-5f3a6a0eb8d0" name="Default Changelist" comment="With neighbor">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/recipesforme/bl/services/CategoryService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/recipesforme/models/Category.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/recipesforme/repositories/CategoryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="675e427e-d7f1-4565-a375-5f3a6a0eb8d0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/RecipesForMeApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/RecipesForMeApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/bl/BasicFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/bl/BasicFunctions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/bl/TextParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/bl/TextParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/bl/services/GroupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/bl/services/GroupService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/bl/services/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/bl/services/CategoryService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/bl/services/LevelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/bl/services/LevelService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/bl/services/NeighborService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/bl/services/NeighborService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/bl/services/PositionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/bl/services/PositionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/bl/services/RecipeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/bl/services/RecipeService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/bl/services/WordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/bl/services/WordService.java" afterDir="false" />
@@ -35,8 +23,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/models/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/models/Position.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/models/Recipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/models/Recipe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/models/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/models/Word.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/repositories/GroupRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/repositories/GroupRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/repositories/NeighborRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/repositories/NeighborRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/repositories/LevelRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/repositories/LevelRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/repositories/PositionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/repositories/PositionRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/repositories/RecipeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/repositories/RecipeRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/recipesforme/repositories/WordRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recipesforme/repositories/WordRepository.java" afterDir="false" />
@@ -204,6 +191,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -664,7 +652,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609185304831</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="With neighbor">
+      <created>1610386152949</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1610386152949</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TodoView">
@@ -737,44 +732,9 @@
           <option name="timeStamp" value="71" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/recipesforme/controllers/TextLoaderController.java</url>
-          <line>124</line>
-          <option name="timeStamp" value="80" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/recipesforme/controllers/TextLoaderController.java</url>
-          <line>109</line>
-          <option name="timeStamp" value="93" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/recipesforme/controllers/TextLoaderController.java</url>
-          <line>119</line>
-          <option name="timeStamp" value="96" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/recipesforme/controllers/TextLoaderController.java</url>
-          <line>103</line>
-          <option name="timeStamp" value="97" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/recipesforme/bl/services/WordService.java</url>
-          <line>50</line>
+          <line>55</line>
           <option name="timeStamp" value="117" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/recipesforme/controllers/TextLoaderController.java</url>
-          <line>161</line>
-          <option name="timeStamp" value="118" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/recipesforme/bl/TextParser.java</url>
-          <line>122</line>
-          <option name="timeStamp" value="120" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/recipesforme/bl/TextParser.java</url>
-          <line>126</line>
-          <option name="timeStamp" value="123" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/recipesforme/bl/TextParser.java</url>
@@ -782,19 +742,49 @@
           <option name="timeStamp" value="124" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/recipesforme/controllers/TextLoaderController.java</url>
+          <line>107</line>
+          <option name="timeStamp" value="138" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/recipesforme/bl/services/WordService.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="139" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/recipesforme/bl/services/RecipeService.java</url>
+          <line>98</line>
+          <option name="timeStamp" value="144" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/recipesforme/bl/services/RecipeService.java</url>
+          <line>144</line>
+          <option name="timeStamp" value="145" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/recipesforme/controllers/TextLoaderController.java</url>
+          <line>181</line>
+          <option name="timeStamp" value="150" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/recipesforme/controllers/TextLoaderController.java</url>
+          <line>86</line>
+          <option name="timeStamp" value="162" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/recipesforme/bl/services/RecipeService.java</url>
+          <line>71</line>
+          <option name="timeStamp" value="176" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/recipesforme/controllers/TextLoaderController.java</url>
+          <line>120</line>
+          <option name="timeStamp" value="177" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/recipesforme/bl/TextParser.java</url>
           <line>188</line>
-          <option name="timeStamp" value="127" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/recipesforme/bl/TextParser.java</url>
-          <line>121</line>
-          <option name="timeStamp" value="132" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/recipesforme/bl/TextParser.java</url>
-          <line>130</line>
-          <option name="timeStamp" value="133" />
+          <option name="timeStamp" value="180" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -809,7 +799,7 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/recipeRecover$RecipesForMeApplication.ic" NAME="RecipesForMeApplication Coverage Results" MODIFIED="1610369701202" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/recipeRecover$RecipesForMeApplication.ic" NAME="RecipesForMeApplication Coverage Results" MODIFIED="1610458101097" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
