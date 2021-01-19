@@ -95,7 +95,7 @@ public class TextLoaderController {
             if (!r.isEmpty()) {
                 rUUID = Optional.of(r.get().getRecipeId());
             }
-            this.positionService.findByPositionDetails(row.get(), col.get(), rUUID, null)
+            this.positionService.findByPositionDetails(row.get(), col.get(), rUUID, Optional.empty())
                     .forEach(position -> wordList.addAll(position.getWords()));
         } else {
             wordList.addAll(this.wordService.findAll());

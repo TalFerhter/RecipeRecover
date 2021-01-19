@@ -36,14 +36,14 @@ public class PositionService {
 
     public Iterable<Position> findByPositionDetails(int row, int col, Optional<UUID> recipe_id,
                                                           Optional<UUID> paragraph_id){
-        if (recipe_id.isPresent()){
-            if (paragraph_id.isPresent()){
+        if (!recipe_id.isEmpty()){
+            if (!paragraph_id.isEmpty()){
                 return repository.findWordPositionsByRecipe(recipe_id.get(), row, col, paragraph_id.get());
             }
             return repository.findWordPositionsByRecipe(recipe_id.get(), row, col);
 
         }
-        if (paragraph_id.isPresent()) {
+        if (!paragraph_id.isEmpty()) {
             return repository.findWordPositions(row, col, paragraph_id.get());
         }
         return repository.findWordPositions(row, col);
